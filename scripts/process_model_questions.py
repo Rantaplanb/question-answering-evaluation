@@ -6,5 +6,5 @@ questions = data['question']
 
 question_list = []
 
-for i in range(len(questions) / 10):
-    print(questions[i])
+for i in range(int(len(questions) / 10)):
+    print(i, questions[i*10])
