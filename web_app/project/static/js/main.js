@@ -29,9 +29,26 @@ $('#add-button').on('click', () => {
 
 $('#answer-button').on('click', () => {
     inputList = $('.input');
-    outputList = $('output');
+    context = $('#context').val();
 
-    for (let i = 0; i < outputList.length; i++) {
-        outputList.get(i).innerText = inputList.get(i).value;
+
+    let request = {}
+    request.context = context;
+    for (let i = 0; i < inputList.length; i++) {
+        request["question" + i] = inputList.get(i).value;
     }
+
+    $.ajax({
+        type: 'POST',
+        contentType: 'application/json',
+        data: JSON.stringify(request),
+        dataType: 'json',
+        url: 'http://127.0.0.1:8080/questions',
+        success: (e) => {
+            console.log(e);
+        },
+        error: (e) => {
+            console.log(e);
+        }
+    });
 });
