@@ -7,7 +7,7 @@ $('#add-button').on('click', () => {
     $questions.append('<div class="question" id="' + questionCounter + '">' +
         '<h3 class="question-counter">Question #' + (questionCounter + 1) + '</h3>' +
         '<div class="question-field">' +
-        '<input class="input" type="text" value=" ">' +
+        '<input class="input" type="text" value="">' +
         '<button class="remove-question" id="remove-' + questionCounter + '" name="' + questionCounter + '"> - </button>' +
         '</div>' +
         '<output></output>');
@@ -34,9 +34,9 @@ $('#answer-button').on('click', () => {
 
     let request = {}
     request.context = context;
-    request.questions = {};
+    request.questions = [];
     for (let i = 0; i < inputList.length; i++) {
-        request.questions["question" + i] = inputList.get(i).value;
+        request.questions.push(inputList.get(i).value);
     }
 
     $.ajax({
