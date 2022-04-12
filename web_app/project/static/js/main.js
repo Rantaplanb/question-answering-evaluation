@@ -34,8 +34,9 @@ $('#answer-button').on('click', () => {
 
     let request = {}
     request.context = context;
+    request.questions = [];
     for (let i = 0; i < inputList.length; i++) {
-        request["question" + i] = inputList.get(i).value;
+        request.questions["question" + i] = inputList.get(i).value;
     }
 
     $.ajax({
