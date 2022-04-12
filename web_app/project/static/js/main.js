@@ -28,6 +28,7 @@ $('#add-button').on('click', () => {
 });
 
 $('#answer-button').on('click', () => {
+    outputList = $('output');
     inputList = $('.input');
     context = $('#context').val();
 
@@ -45,8 +46,13 @@ $('#answer-button').on('click', () => {
         data: JSON.stringify(request),
         dataType: 'json',
         url: 'http://127.0.0.1:8080/questions',
-        success: (e) => {
-            console.log(e);
+        success: (answers) => {
+            i = 0;
+            for (let index in answers) {
+                outputList.get(i).innerText = answers[index];
+                i++;
+            }
+
         },
         error: (e) => {
             console.log(e);

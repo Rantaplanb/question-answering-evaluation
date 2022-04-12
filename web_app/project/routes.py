@@ -1,14 +1,25 @@
+import json
 from project import app
-from flask import render_template, redirect, abort, request
+from project import controller
+from flask import render_template, redirect, request, jsonify
 
 @app.route('/')  # Home page
 def homePage():
-    print("test")
     return render_template("index.html")
 
-# @app.route('/about/')
-# def about():
-#     return '<h1> About Page </h1>', 500
+@app.route('/questions', methods=['POST'])  
+def answersPage():
+    dict = request.json
+    answers = {}
+    for i in range(len(dict['questions'])):
+        answers['answer' + str(i)] = controller.answer_question(dict["context"], dict["questions"][i], "deepset/roberta-base-squad2")
+    print("server responds...")
+    return answers
+
+
+@app.route('/about/')
+def about():
+    return '<h1> About Page </h1>', 500
 
 # @app.errorhandler(500)
 # def handleServerError(e):
