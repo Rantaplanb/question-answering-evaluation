@@ -1,5 +1,7 @@
 from googletrans import Translator
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM,pipeline
+import goslate
+from textblob import TextBlob
 
 google_translator = Translator()
 
@@ -9,6 +11,7 @@ model_gr_to_en = AutoModelForSeq2SeqLM.from_pretrained("Helsinki-NLP/opus-mt-grk
 tokenizer_en_to_gr = AutoTokenizer.from_pretrained("Helsinki-NLP/opus-mt-en-el")
 model_en_to_gr = AutoModelForSeq2SeqLM.from_pretrained("Helsinki-NLP/opus-mt-en-el")
 
+goslate_translator = goslate.Goslate()
 
 def google_translate(input, src='auto', dest='en'):
     return google_translator.translate(input, src=src, dest=dest).text
@@ -23,10 +26,18 @@ def helsinki_translate(input, src='el', dest='en'):
         raise Exception("Invalid language selection.")
     return translation(input)[0]['translation_text']
 
+def goslate_translate(input, src='auto', dest='en'):
+    return goslate_translator.translate(input, dest)
+
+def textblob_translate(input, src='auto', dest='en'):
+    return TextBlob(input).translate(to=dest)
+
 # Dictionary of functions
 translate_dict = {
     "google": google_translate,
-    "helsinki": helsinki_translate
+    "helsinki": helsinki_translate,
+    "goslate": goslate_translate,
+    "textblob": textblob_translate
 }
 
 def translate(input, translator, src='el', dest='en'):
