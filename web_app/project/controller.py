@@ -8,7 +8,7 @@ def answer_question(context, question, model):
     context = translate(context, 'google', 'el', 'en')
     question = translate(question, 'google', 'el', 'en')
     question_answerer = pipeline(task="question-answering", model = model)
-    return question_answerer(question = question, context = context)['answer']
+    return translate(question_answerer(question = question, context = context)['answer'], 'google', 'en', 'el')
 
 models = [
     "deepset/roberta-base-squad2",
