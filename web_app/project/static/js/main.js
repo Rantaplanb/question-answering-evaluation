@@ -31,12 +31,9 @@ $('#answer-button').on('click', () => {
     outputList = $('output');
     inputList = $('.input');
     context = $('#context').val();
-<<<<<<< HEAD
     $('load-bar').addClass("loader");
 
-=======
     model = $('#models').val();
->>>>>>> 6df63b9b8fcbaf7f4793a9651720655968877f9a
 
     let request = {}
     request.context = context;
