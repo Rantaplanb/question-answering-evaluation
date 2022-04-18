@@ -4,7 +4,7 @@ from textblob import TextBlob
 
 
 
-if __name__ == "_main__":
+if __name__ == "__main__":
 
     collection = requests.get("http://users.ics.forth.gr/mountant/files/greek.json").text
 
@@ -23,8 +23,8 @@ if __name__ == "_main__":
             print('\tGoogle:')
             print(translate(greek_context, "google", "el", "en"))
 
-            print('\tHelsinki:')
-            print(translate(greek_context, "helsinki", "el", "en"))
+            # print('\tHelsinki:')
+            # print(translate(greek_context, "helsinki", "el", "en"))
 
             print('\tGoslate:')
             print(translate(greek_context, "goslate", "el", "en"))
