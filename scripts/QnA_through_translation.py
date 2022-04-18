@@ -36,7 +36,7 @@ with open(output_file, 'a', encoding='UTF16') as file:
     for subject in data:
         paragraphs = subject["paragraphs"]
         print('\n-------------------------\n')
-        for QnA in paragraphs:        
+        for QnA in paragraphs:      
             en_context = translate(QnA['context'], 'google', 'el', 'en') #TODO: translate with helsinki (care for length limit)
             print('Context:', en_context)
             for qna in QnA["qas"]:
@@ -49,7 +49,6 @@ with open(output_file, 'a', encoding='UTF16') as file:
                     results.append([question, models[i], result['score'], result['start'], result['end'], translate(result['answer'], 'helsinki', src='en', dest='el'), qna['answers'][0]['text']])
                     question = ""
 
-                
                 writer = csv.writer(file)
                 for i in range(len(results)):
                     writer.writerow(results[i])

@@ -17,7 +17,6 @@ substring_scores = data['substring_score']
 sentence_transformers_scores = data['sentence_transformers_score']
 weighted_scores = data['weighted_total_score']
 
-
 total_weighted_score = []
 average_model_prediction_score = []
 model_prediction_accuracy = [] 
