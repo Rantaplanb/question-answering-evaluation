@@ -3,7 +3,7 @@ import translators as ts
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM,pipeline
 import goslate
 from textblob import TextBlob
-from utils.sentenceDetector import splitText
+from utils.sentenceDetector import splitToSentences, splitText
 
 google_translator = Translator()
 
@@ -16,7 +16,14 @@ model_en_to_gr = AutoModelForSeq2SeqLM.from_pretrained("Helsinki-NLP/opus-mt-en-
 goslate_translator = goslate.Goslate()
 
 def google_translate(input, src='auto', dest='en'):
-    return google_translator.translate(input, src=src, dest=dest).text
+    result = ''
+    if len(input) > 2500:
+        texts = splitText(input)
+        for text in texts:
+            result += google_translator.translate(text, src=src, dest=dest).text
+    else:
+        result = google_translator.translate(input, src=src, dest=dest).text
+    return result
 
 def translate_sentence_with_helsinki(input, src='el', dest='en'):
     if ( (src == 'el') and (dest == 'en') ):
@@ -28,7 +35,7 @@ def translate_sentence_with_helsinki(input, src='el', dest='en'):
     return translation(input)[0]['translation_text']
 
 def helsinki_translate(text, input_lang, output_lang):
-    sentences = splitText(text)
+    sentences = splitToSentences(text)
     translated_text = ''
     for sentence in sentences:
         if(sentence == '..'):
@@ -61,4 +68,8 @@ translate_dict = {
 }
 
 def translate(input, translator, src='el', dest='en'):
-    return translate_dict[translator](input, src, dest)
+    try:
+        return translate_dict[translator](input, src, dest)
+    except Exception as e:
+        return e
+

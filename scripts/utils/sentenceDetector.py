@@ -9,8 +9,24 @@ documenter = DocumentAssembler().setInputCol("text").setOutputCol("document")
 sentencerDL = SentenceDetectorDLModel.pretrained("sentence_detector_dl", "xx").setInputCols(["document"]).setOutputCol("sentences")
 sd_model = LightPipeline(PipelineModel(stages=[documenter, sentencerDL]))
 
-def splitText(text):
+def splitToSentences(text):
     sentences=[]
     for anno in sd_model.fullAnnotate(text)[0]["sentences"]:
         sentences.append(anno.result)
     return sentences
+
+
+def splitText(text):
+    sentences = splitToSentences(text)
+    texts = []
+    char_counter = 0
+    cur_text = ''
+    for sentence in sentences:
+        if char_counter + len(sentence) > 2500:
+            texts.append(cur_text)
+            cur_text = ''
+            char_counter = 0
+        cur_text += sentence
+        char_counter += len(sentence)
+    texts.append(cur_text)
+    return texts
