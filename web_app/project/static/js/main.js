@@ -31,11 +31,12 @@ $('#answer-button').on('click', () => {
     outputList = $('output');
     inputList = $('.input');
     context = $('#context').val();
-
+    model = $('#models').val();
 
     let request = {}
     request.context = context;
     request.questions = [];
+    request.model = model;
     for (let i = 0; i < inputList.length; i++) {
         request.questions.push(inputList.get(i).value);
     }

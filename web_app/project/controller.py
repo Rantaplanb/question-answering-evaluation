@@ -10,18 +10,6 @@ def answer_question(context, question, model):
     question_answerer = pipeline(task="question-answering", model = model)
     return translate(question_answerer(question = question, context = context)['answer'], 'google', 'en', 'el')
 
-models = [
-    "deepset/roberta-base-squad2",
-    "bert-large-uncased-whole-word-masking-finetuned-squad",
-    "distilbert-base-cased-distilled-squad",
-    "deepset/bert-large-uncased-whole-word-masking-squad2",
-    "distilbert-base-uncased-distilled-squad",
-    "rsvp-ai/bertserini-bert-base-squad",
-    "deepset/minilm-uncased-squad2",
-    "dmis-lab/biobert-large-cased-v1.1-squad",
-    "deepset/bert-base-cased-squad2",
-    "bert-large-cased-whole-word-masking-finetuned-squad"]
-
 # with open(output_file, 'a', encoding='UTF16') as file:
 #     writer = csv.writer(file)
 #     writer.writerow(headers)

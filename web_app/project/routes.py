@@ -12,7 +12,7 @@ def answersPage():
     dict = request.json
     answers = {}
     for i in range(len(dict['questions'])):
-        answers['answer' + str(i)] = controller.answer_question(dict["context"], dict["questions"][i], "deepset/roberta-base-squad2")
+        answers['answer' + str(i)] = controller.answer_question(dict["context"], dict["questions"][i], dict["model"])
     print("server responds...")
     return answers
 
