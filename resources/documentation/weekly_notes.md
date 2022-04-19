@@ -40,7 +40,7 @@ The dataset should contain texts of different lengths and subjects.
 
   
 
-We found a nice set of greek texts [here](https://www.greek-language.gr/certification/dbs/teachers/index.html) and added a few of them in our set (texts_for_translation.txt).
+We found a nice set of greek texts [here](https://www.greek-language.gr/certification/dbs/teachers/index.html) and added a selection of them in our set (texts_for_translation.txt).
 
   
 
