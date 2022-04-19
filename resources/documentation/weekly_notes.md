@@ -44,13 +44,19 @@ After analyzing the translated texts, we made the following remarks:
 
    1. The main issue of all translators, is that many times they translate the text literally. Helsinki and Bing translators seem to have an edge over the others in this aspect.
 
-	        Eg1: "Πηγαίνω τα αγόρια στο ποδόσφαιρό" -> "I go boys in football" (actual wrong result) -> "I take the kids to football" (expected correct result, also given by the google translate web app)
+	        Eg1: "Πηγαίνω τα αγόρια στο ποδόσφαιρό"
+                - "I go boys in football" (actual wrong result) 
+                    - "I take the kids to football" (expected correct result, also given by the google translate web app)
 	
-	        Eg2: "Το βραδάκι βλέπουμε τηλεόραση" -> "The evening we see television" (actual wrong result) "In the evening we watch TV" (expected correct result, also given by the google translate web app)
+	        Eg2: "Το βραδάκι βλέπουμε τηλεόραση" 
+                - "The evening we see television" (actual wrong result) 
+                    - "In the evening we watch TV" (expected correct result, also given by the google translate web app)
 
    2. Greek names may be interpreted as words. Helsinki and Bing had an edge here too.
 
-            Eg1: "Έχω ένα μικρό σκυλάκι, την Τάμι" -> "I have a little dog, tomato" (actual wrong result) -> "I have a little dog, Tammy" (expected correct result, also given by the google translate web app)
+            Eg1: "Έχω ένα μικρό σκυλάκι, την Τάμι" 
+                - "I have a little dog, tomato" (actual wrong result) 
+                    - "I have a little dog, Tammy" (expected correct result, also given by the google translate web app)
 
    3. Textblob translator generally underperformed.
 
