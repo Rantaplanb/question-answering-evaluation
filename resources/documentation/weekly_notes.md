@@ -19,7 +19,8 @@ The dataset should contain texts of different lengths and subjects.
 We found a nice set of greek texts [here](https://www.greek-language.gr/certification/dbs/teachers/index.html) and added a few of them in our set (texts_for_translation.txt).
 
 The helsinki translation api cannot handle long text, so we decided to split each text in sentences. We used the spark nlp multilanguage model for the splitting.
- 
+
+We created a utility python script that provides us with a list of working proxies. They way it does it is by scraping some of the most popular websites that have a list of free proxies. We provide the urls of those sites and with the use of the BeautifulSoup python library we scrape those websites for proxies that support https. We need proxies when we have to handle multiple api calls because the api's block us from after a certain ammount of calls. By adding to proxies and calling the api's with a different proxy everytime we ensure that we won't be blocked.
 
 ** All api's must be tested in both en->gr translation and gr->en. 
 
