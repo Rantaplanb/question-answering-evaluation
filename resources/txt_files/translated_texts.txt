@@ -1,10 +1,3 @@
-:: loading settings :: url = jar:file:/home/rantaplan/.virtualenvs/thesis/lib/python3.8/site-packages/pyspark/jars/ivy-2.5.0.jar!/org/apache/ivy/core/settings/ivysettings.xml
-sentence_detector_dl download started this may take some time.
-Approximate size to download 514.9 KB
-[ | ]sentence_detector_dl download started this may take some time.
-Approximate size to download 514.9 KB
-[ / ]Download done! Loading the resource.
-[OK!]
 Original text: 
  Γιώργο, καλημέρα.
 
