@@ -104,14 +104,24 @@ Eg1: "Έχω ένα μικρό σκυλάκι, την Τάμι"
 
    6. All translators got vastly outperformed by google translate web app.
 
-  
+   7. (WIP) All the translators seem to have trouble transfering context from previous sentences to the following ones. 
 
-  
+   8. The helsinki translator appears to skip sentences sometimes (we also tried using the Helsinki-NLP/opus-mt-grk-en huggingface web app and the same problem occured).
 
+   9. Helsinki does not accept very big input, so we had to split the context into sentences. This enhances the problem mentioned in (7.)
 We consider the translation step, a very important part of our QnA procedure. So we may need to consider using selenium + google translate web application for translation.
 
+   10. Helsinki did very well regarding the tenses. It uses the appropriate one to translate the meaning of the original text. 
   
+   11. Google translator just translated the original text, word by word, without understanding the meaning and the context. 
 
-  
+   12. Helsinki and Bing add punctuation (mostly commas), to convey the meaning better. 
+
+   13. Helsinki performed poorly in translating names.
+
+   14. In general, Bing translator outperformed the others, mainly because it managed to understand the context of the input text better than the others. 
+
+   15. Bing changes the order of the words in a sentence, to give a syntactically better result.  
 
 ** All api's must be tested in both en->gr translation and gr->en.
+
