@@ -125,3 +125,13 @@ We consider the translation step, a very important part of our QnA procedure. So
 
 ** All api's must be tested in both en->gr translation and gr->en.
 
+----------------------------------------------------
+
+Provlima: To SQUAD dataset exei to eksis provlima stis endiktikes apantiseis twn erwtisewn:
+	Otan i apantisi einai onoma, einai alote grammeni me agglikous xaraktires, kai allote me ellinikous.
+
+To dataset graftike sta agglika kai metafrastike (pithanotata me to helsinki translator) sta ellinika.
+Auto simainei oti to provlima auto proekupse apo tin metafrasi tou helsinki, diladi alla onomata ta metefraze se elliniko text,
+enw alla ta kratouse me agglikous xaraktires stin arxiki tous morfi. 
+
+Tha itan polu xrisimo an mporousame na vroume to dataset auto stin aggliki tou morfi (giati mporoume na testaroume tis 2 faseis tou QnA xwrista)

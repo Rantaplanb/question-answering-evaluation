@@ -4,6 +4,7 @@ from transformers import AutoTokenizer, AutoModelForSeq2SeqLM,pipeline
 import goslate
 from textblob import TextBlob
 from utils.sentenceDetector import splitToSentences, splitText
+import time
 
 google_translator = Translator()
 
@@ -53,15 +54,35 @@ def textblob_translate(input, src='auto', dest='en'):
 def google2_translate(input, src='auto', dest='en'):
     return ts.google(input, from_language=src, to_language=dest)
 
+def request_bing_translation(input, src, dest):
+    nap_time = 3
+    exception_counter = 0
+    exception_total_counter = 0
+    while(True):
+        try:
+            if exception_total_counter > 100:
+                print("Reached 100 exceptions sleeping for 2 minutes...")
+                time.sleep(120)
+                exception_total_counter = 0
+            response = ts.bing(input, from_language=src, to_language=dest)
+            return response
+        except Exception as e:
+            if(exception_counter > 5):
+                nap_time += nap_time
+            exception_counter += 1
+            exception_total_counter += 1
+            print("An exception occured: ", e)
+            print("Sleeping for ", nap_time, ", exceptions happend: ", exception_counter)
+            time.sleep(nap_time)
 
 def bing_translate(input, src='auto', dest='en'):
     result = ''
     if len(input) > 2500:
         texts = splitText(input)
         for text in texts:
-            result += ts.bing(text, from_language=src, to_language=dest)
+            result += request_bing_translation(text, src, dest)
     else:
-        result = ts.bing(input, from_language=src, to_language=dest)
+            result = request_bing_translation(input, src, dest)
     return result
 
 # Dictionary of functions

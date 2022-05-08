@@ -2,7 +2,8 @@ import csv, json, requests
 from utils.translator import translate
 from transformers import pipeline
 
-output_file = '../resources/csv_files/questions_with_answers_from_all_models_v2.csv'
+print("Script starts...")
+output_file = '../resources/csv_files/questions_with_answers_from_all_models_with_bing_translator.csv'
 
 def answer_question(context, question, model):
     question_answerer = pipeline(task="question-answering", model = model)
@@ -13,9 +14,14 @@ def fetch_data():
     json_qna_str = response.text
     return json.loads(json_qna_str)["data"]
 
-data = fetch_data()
+def get_dataset():
+    f = open('../resources/json_files/squad_QnA_dataset.json')
+    return json.load(f)["data"]
 
-headers = ['question', 'model', 'score', 'start', 'end', 'model_answer', 'correct_answer']
+print("Getting data...")
+data = get_dataset()
+
+headers = ['question', 'model', 'score', 'start', 'end', 'translated_model_answer', 'original_model_answer', 'correct_answer']
 
 models = [
     "deepset/roberta-base-squad2",
@@ -36,19 +42,19 @@ with open(output_file, 'a', encoding='UTF16') as file:
     for subject in data:
         paragraphs = subject["paragraphs"]
         print('\n-------------------------\n')
-        for QnA in paragraphs:      
-            en_context = translate(QnA['context'], 'google', 'el', 'en') #TODO: translate with helsinki (care for length limit)
+        for QnA in paragraphs: #For each context 
+            en_context = translate(QnA['context'], 'bing', 'el', 'en') 
             print('Context:', en_context)
-            for qna in QnA["qas"]:
-                en_question = translate(qna["question"], 'google', 'el', 'en')
+            for qna in QnA["qas"]: #For each question
+                en_question = translate(qna["question"], 'bing', 'el', 'en')
                 
                 results = []
                 question = en_question
-                for i in range(len(models)):
+                for i in range(len(models)): #For each model
                     result = answer_question(en_context, en_question, models[i])
-                    results.append([question, models[i], result['score'], result['start'], result['end'], translate(result['answer'], 'helsinki', src='en', dest='el'), qna['answers'][0]['text']])
+                    results.append([question, models[i], result['score'], result['start'], result['end'], result['answer'], translate(result['answer'], 'bing', src='en', dest='el'), qna['answers'][0]['text']])
                     question = ""
 
                 writer = csv.writer(file)
-                for i in range(len(results)):
+                for i in range(len(results)): #For each model answer
                     writer.writerow(results[i])
