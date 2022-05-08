@@ -6,7 +6,7 @@ from fake_useragent import UserAgent
 import goslate
 import urllib.request as urllib2
 
-def get_proxies(link):   
+def get_proxies(link):
     response = requests.get(link)
     soup = BeautifulSoup(response.text,"html.parser")
     proxies = [':'.join([item.select_one("td").text,item.select_one("td:nth-of-type(2)").text]) for item in soup.select("table.table tr") if "yes" in item.text]
