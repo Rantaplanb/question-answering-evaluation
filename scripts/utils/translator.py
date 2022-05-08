@@ -55,7 +55,14 @@ def google2_translate(input, src='auto', dest='en'):
 
 
 def bing_translate(input, src='auto', dest='en'):
-    return ts.bing(input, from_language=src, to_language=dest)
+    result = ''
+    if len(input) > 2500:
+        texts = splitText(input)
+        for text in texts:
+            result += ts.bing(text, from_language=src, to_language=dest)
+    else:
+        result = ts.bing(input, from_language=src, to_language=dest)
+    return result
 
 # Dictionary of functions
 translate_dict = {
