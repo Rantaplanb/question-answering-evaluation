@@ -19,7 +19,7 @@ goslate_translator = goslate.Goslate()
 def google_translate(input, src='auto', dest='en'):
     result = ''
     if len(input) > 2500:
-        texts = splitText(input)
+        texts = splitText(input, 2500)
         for text in texts:
             result += google_translator.translate(text, src=src, dest=dest).text
     else:
@@ -75,14 +75,31 @@ def request_bing_translation(input, src, dest):
             print("Sleeping for ", nap_time, ", exceptions happend: ", exception_counter)
             time.sleep(nap_time)
 
+# Map greek and english words.
+greek_to_english = {}
+
 def bing_translate(input, src='auto', dest='en'):
     result = ''
-    if len(input) > 2500:
-        texts = splitText(input)
+    print("Original Text word count: ", len(input))
+    if len(input) > 999:
+        texts = splitText(input, 999)
         for text in texts:
-            result += request_bing_translation(text, src, dest)
+            # if text not in greek_to_english.keys():
+            translated_text = request_bing_translation(text, src, dest)
+            result += translated_text
+            #     print('Appending to dictionary:', text, '->', translated_text)
+            #     greek_to_english[text] = translated_text
+            # else:
+            #     result += greek_to_english[text]
     else:
-            result = request_bing_translation(input, src, dest)
+        if input not in greek_to_english.keys():
+            translated_text = request_bing_translation(input, src, dest)
+            result = translated_text
+            print('Appending to dictionary:', input, '->', translated_text)
+            greek_to_english[input] = translated_text
+        else:
+            print('Using from dictionary: ', input, '->', greek_to_english[input])
+            result += greek_to_english[input]
     return result
 
 # Dictionary of functions
@@ -99,5 +116,6 @@ def translate(input, translator, src='el', dest='en'):
     try:
         return translate_dict[translator](input, src, dest)
     except Exception as e:
+        print("Exception while translating: ",input, ", with translator: ", translator, " : ",e)
         return e
 

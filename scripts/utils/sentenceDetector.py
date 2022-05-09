@@ -16,13 +16,13 @@ def splitToSentences(text):
     return sentences
 
 
-def splitText(text):
+def splitText(text, length_limit):
     sentences = splitToSentences(text)
     texts = []
     char_counter = 0
     cur_text = ''
     for sentence in sentences:
-        if char_counter + len(sentence) > 2500:
+        if char_counter + len(sentence) > length_limit:
             texts.append(cur_text)
             cur_text = ''
             char_counter = 0

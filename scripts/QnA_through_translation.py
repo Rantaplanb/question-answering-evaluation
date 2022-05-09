@@ -39,22 +39,23 @@ with open(output_file, 'a', encoding='UTF16') as file:
     writer = csv.writer(file)
     writer.writerow(headers)
 
-    for subject in data:
-        paragraphs = subject["paragraphs"]
-        print('\n-------------------------\n')
-        for QnA in paragraphs: #For each context 
-            en_context = translate(QnA['context'], 'bing', 'el', 'en') 
-            print('Context:', en_context)
-            for qna in QnA["qas"]: #For each question
-                en_question = translate(qna["question"], 'bing', 'el', 'en')
-                
-                results = []
-                question = en_question
-                for i in range(len(models)): #For each model
-                    result = answer_question(en_context, en_question, models[i])
-                    results.append([question, models[i], result['score'], result['start'], result['end'], result['answer'], translate(result['answer'], 'bing', src='en', dest='el'), qna['answers'][0]['text']])
-                    question = ""
+for subject in data:
+    paragraphs = subject["paragraphs"]
+    print('\n-------------------------\n')
+    for QnA in paragraphs: #For each context 
+        en_context = translate(QnA['context'], 'bing', 'el', 'en') 
+        print('Context:', en_context)
+        for qna in QnA["qas"]: #For each question
+            en_question = translate(qna["question"], 'bing', 'el', 'en')
+            print('Question: ', en_question)
+            results = []
+            question = en_question
+            for i in range(len(models)): #For each model
+                result = answer_question(en_context, en_question, models[i])
+                results.append([question, models[i], result['score'], result['start'], result['end'], result['answer'], translate(result['answer'], 'bing', src='en', dest='el'), qna['answers'][0]['text']])
+                question = ""
 
+            with open(output_file, 'a', encoding='UTF16') as file:
                 writer = csv.writer(file)
                 for i in range(len(results)): #For each model answer
                     writer.writerow(results[i])
