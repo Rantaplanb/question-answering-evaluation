@@ -25,7 +25,7 @@ def get_dataset():
 print("Getting data...")
 data = get_dataset()
 
-headers = ['question', 'model', 'model_response_time', 'score', 'start', 'end', 'translated_model_answer', 'original_model_answer', 'correct_answer']
+headers = ['question', 'model', 'model_response_time', 'score', 'start', 'end', 'original_model_answer', 'translated_model_answer', 'correct_answer']
 
 models = [
     "deepset/roberta-base-squad2",

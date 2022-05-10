@@ -16,6 +16,9 @@ model_en_to_gr = AutoModelForSeq2SeqLM.from_pretrained("Helsinki-NLP/opus-mt-en-
 
 goslate_translator = goslate.Goslate()
 
+# Map greek and english words.
+greek_to_english = {}
+
 def google_translate(input, src='auto', dest='en'):
     result = ''
     if len(input) > 2500:
@@ -42,7 +45,12 @@ def helsinki_translate(text, input_lang, output_lang):
         if(sentence == '..'):
             translated_text += '..'
         else:
-            translated_text += translate_sentence_with_helsinki(sentence, input_lang, output_lang)
+            if sentence not in greek_to_english.keys():
+                greek_to_english[sentence] = translate_sentence_with_helsinki(sentence, input_lang, output_lang)
+                print('Appending to dictionary:', sentence, '->', translated_text)
+            else:
+                print('Using from dictionary: ', sentence, '->', greek_to_english[sentence])
+            translated_text += greek_to_english[sentence]
     return translated_text
 
 def goslate_translate(input, src='auto', dest='en'):
@@ -75,8 +83,6 @@ def request_bing_translation(input, src, dest):
             print("Sleeping for ", nap_time, ", exceptions happend: ", exception_counter)
             time.sleep(nap_time)
 
-# Map greek and english words.
-greek_to_english = {}
 
 def bing_translate(input, src='auto', dest='en'):
     result = ''

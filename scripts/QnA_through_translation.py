@@ -15,13 +15,13 @@ def fetch_data():
     return json.loads(json_qna_str)["data"]
 
 def get_dataset():
-    f = open('../resources/json_files/squad_QnA_dataset.json')
+    f = open('../resources/json_files/squad_QnA_dataset_cut.json')
     return json.load(f)["data"]
 
 print("Getting data...")
 data = get_dataset()
 
-headers = ['question', 'model', 'score', 'start', 'end', 'translated_model_answer', 'original_model_answer', 'correct_answer']
+headers = ['question', 'model', 'score', 'start', 'end', 'original_model_answer', 'translated_model_answer', 'correct_answer']
 
 models = [
     "deepset/roberta-base-squad2",
@@ -35,9 +35,9 @@ models = [
     "deepset/bert-base-cased-squad2",
     "bert-large-cased-whole-word-masking-finetuned-squad"]
 
-with open(output_file, 'a', encoding='UTF16') as file:
-    writer = csv.writer(file)
-    writer.writerow(headers)
+# with open(output_file, 'a', encoding='UTF16') as file:
+#     writer = csv.writer(file)
+#     writer.writerow(headers)
 
 for subject in data:
     paragraphs = subject["paragraphs"]
