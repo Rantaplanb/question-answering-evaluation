@@ -62,5 +62,5 @@ for subject in data:
                 question = ""
             with open(output_file, 'a', encoding='UTF16') as file:
                 writer = csv.writer(file)
-                for i in range(len(results)):
-                    writer.writerow(results[i])
+                for j in range(len(results)):
+                    writer.writerow(results[j])

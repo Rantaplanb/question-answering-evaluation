@@ -4,7 +4,7 @@ from transformers import pipeline
 import time
 
 input_file = '../resources/json_files/greek_text_QnA_collection.json'
-output_file = '../resources/csv_files/questions_with_answers_from_all_models.csv'
+output_file = '../resources/csv_files/questions_with_answers_from_all_models_on_our_collection.csv'
 
 translator = 'helsinki'
 
@@ -21,13 +21,13 @@ def fetch_data():
     return json.loads(json_qna_str)["data"]
 
 def get_dataset():
-    f = open(input_file)
-    return json.load(f)["data"]
+    f = open(input_file, encoding='utf-16')
+    return json.load(f)["collection"]
 
 print("Getting data...")
-data = get_dataset()
+sets = get_dataset()
 
-headers = ['question', 'model', 'model_response_time', 'score', 'start', 'end', 'original_model_answer', 'translated_model_answer', 'correct_answer']
+headers = ['question', 'model', 'model_response_time', 'score', 'start', 'end', 'original_model_answer', 'translated_model_answer', 'correct_answer', 'translated_correct_answer']
 
 models = [
     "deepset/roberta-base-squad2",
@@ -45,22 +45,25 @@ with open(output_file, 'a', encoding='UTF16') as file:
     writer = csv.writer(file)
     writer.writerow(headers)
 
-for subject in data:
-    paragraphs = subject["paragraphs"]
-    print('\n-------------------------\n')
-    for QnA in paragraphs:      
-        en_context = translate(QnA['context'], translator, 'el', 'en')
-        print('Context:', en_context)
-        for qna in QnA["qas"]:
-            en_question = translate(qna["question"], translator, 'el', 'en')
-            print('Question: ', en_question)
-            results = []
-            question = en_question
-            for i in range(len(models)):
-                result, elapsed_time = answer_question(en_context, en_question, models[i])
-                results.append([question, models[i], elapsed_time, result['score'], result['start'], result['end'], result['answer'], translate(result['answer'], translator, src='en', dest='el'), qna['answers'][0]['text']])
-                question = ""
-            with open(output_file, 'a', encoding='UTF16') as file:
-                writer = csv.writer(file)
-                for i in range(len(results)):
-                    writer.writerow(results[i])
+for set in sets:
+    context = set['context']
+    questions = set['questions']
+    answers = set['answers']
+
+    en_context = translate(context, translator, 'el', 'en')
+    print('Context:', en_context)
+    for i in range(len(questions)):
+        en_question = translate(questions[i], translator, 'el', 'en')
+        print('Question: ', en_question)
+        results = []
+        tmp_question = en_question
+        for j in range(len(models)):
+            result, elapsed_time = answer_question(en_context, en_question, models[j])
+            gr_model_answer = translate(result['answer'], translator, src='en', dest='el')
+            translated_correct_answer = translate(answers[i], translator, src='el', dest='en')
+            results.append([tmp_question, models[j], elapsed_time, result['score'], result['start'], result['end'], result['answer'], gr_model_answer, answers[i], translated_correct_answer])
+            tmp_question = ""
+        with open(output_file, 'a', encoding='UTF16') as file:
+            writer = csv.writer(file)
+            for k in range(len(results)):
+                writer.writerow(results[k])
