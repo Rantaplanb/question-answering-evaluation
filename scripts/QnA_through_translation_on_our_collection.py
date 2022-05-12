@@ -4,9 +4,9 @@ from transformers import pipeline
 import time
 
 input_file = '../resources/json_files/greek_text_QnA_collection.json'
-output_file = '../resources/csv_files/questions_with_answers_from_all_models_on_our_collection.csv'
+output_file = '../resources/csv_files/questions_with_answers_from_all_models_on_our_collection_bing.csv'
 
-translator = 'helsinki'
+translator = 'bing'
 
 def answer_question(context, question, model):
     start = time.time()
