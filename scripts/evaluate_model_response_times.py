@@ -26,10 +26,10 @@ for i in range(len(response_times)):
 
 print("Average response times:")
 for i in range(len(model_average_resp_times)):
-    print(models[i], ' -> ', model_average_resp_times[i] / (len(response_times) / 10))
+    print(models[i], ' -> ', model_average_resp_times[i] / (len(response_times) / 10), ' seconds')
 
 
 print("\nMedian times:")
 for i in range(len(model_median_resp_times)):
     model_median_resp_times[i].sort()
-    print(models[i], ' -> ', model_median_resp_times[i][int(len(model_median_resp_times[i]) / 2)])
+    print(models[i], ' -> ', model_median_resp_times[i][int(len(model_median_resp_times[i]) / 2)], ' seconds')
