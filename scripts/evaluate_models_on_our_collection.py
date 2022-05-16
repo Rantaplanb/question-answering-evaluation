@@ -1,4 +1,6 @@
 import pandas as pd
+import numpy as np
+from matplotlib import pyplot as plt
 
 df_bing = pd.read_csv('../resources/csv_files/questions_with_answers_from_all_models_on_our_collection_bing.csv', encoding='utf16')
 df_helsinki = pd.read_csv('../resources/csv_files/questions_with_answers_from_all_models_on_our_collection.csv', encoding='utf16')
@@ -56,7 +58,8 @@ def get_specific_question_evaluation_histogram_table(model_answers, context_inde
 
     return question_evaluation_count_table
 
-def convert_model_is_correct_column(model_answers):
+def convert_model_is_correct_column_to_num(model_answers):
+    model_answers = list(model_answers)
     for i in range(len(model_answers)):
         converted_num = 0
         if model_answers[i] == 'yes':
@@ -65,7 +68,7 @@ def convert_model_is_correct_column(model_answers):
             converted_num = 0.5
         model_answers[i] = converted_num
     
-    return model_answers
+    return list(model_answers)
 
 if __name__ == "__main__":
     for i in range(model_number):
@@ -73,9 +76,13 @@ if __name__ == "__main__":
     
     print("")
     print(get_specific_question_evaluation_histogram_table(helsinki_model_evaluation, 19, 2))
-    print(convert_model_is_correct_column(bing_model_evaluation).corr(bing_prediction_score))
+    print()
 
-    
+    converted_bing_model_evaluation = convert_model_is_correct_column_to_num(bing_model_evaluation)
+
+    r = np.corrcoef(np.array(converted_bing_model_evaluation), np.array(bing_prediction_score))
+    print(r)
+    plt.plot(converted_bing_model_evaluation, bing_prediction_score)
 
 
     
