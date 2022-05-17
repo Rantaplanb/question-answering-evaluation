@@ -15,6 +15,7 @@ data = get_data(translator)
 is_correct_col = data['is_correct']
 questions_col = data['question']
 scores_col = data['score']
+models_col = data['model']
 
 models = [
     "deepset/roberta-base-squad2",
@@ -49,10 +50,15 @@ def get_question_results(context_index, question_index):
 def get_model_scores(model):
     model_index = models.index(model)
     scores = []
+    is_correct = []
     for i in range(total_contexts * questions_per_context):
         current_index = (i * questions_per_context) + model_index
+        if is_correct_col[current_index] == 'invalid':
+            continue
         scores.append(scores_col[current_index])
-    return scores
+        is_correct.append(is_correct_col[current_index])
+
+    return scores, is_correct
 
 def compare_model_results(res1, res2):
     score1 = res1['yes'] + float(res1['partially']) / 2
@@ -97,6 +103,7 @@ def print_question_statistics(question_results):
     invalid_questions = []
     fully_wrong_questions = []
     exactly_one_correct = []
+    exactly_one_correct_models = []
     at_least_one_correct = []
     correct_or_partially = []
     fully_correct_questions = []
@@ -115,6 +122,14 @@ def print_question_statistics(question_results):
             exactly_one_correct.append(cur_question)
         if result['no'] == 0 and result['invalid'] == 0:
             correct_or_partially.append(cur_question)
+
+    # Finding the models that answered correct in a question while the others answered wrong.
+    exactly_one_correct_models = {models[0]:0, models[1]:0, models[2]:0, models[3]:0, models[4]:0, models[5]:0, models[6]:0, models[7]:0, models[8]:0, models[9]:0}
+    for question in exactly_one_correct:
+        starting_index = list(questions_col).index(question)
+        for i in range(questions_per_context):
+            if is_correct_col[starting_index + i] == 'yes':
+                exactly_one_correct_models[models_col[starting_index + i]] += 1
 
     print('\033[01;31m','------------------------------------------------------------','\033[00m', sep='')
     print_yellow()
@@ -138,23 +153,50 @@ def print_question_statistics(question_results):
     print_yellow()
     print(len(at_least_one_correct), 'questions were answered correctly by at least one model: ')
     print('\033[01;31m','------------------------------------------------------------','\033[00m', sep='')
-
     for q in at_least_one_correct:
         print(q)
     print('\033[01;31m','\n------------------------------------------------------------','\033[00m', sep='')
     print_yellow()
     print(len(correct_or_partially), 'questions had no wrong answers (only correct or partially correct): ')
     print('\033[01;31m','------------------------------------------------------------','\033[00m', sep='')
-
     for q in correct_or_partially:
         print(q)
     print('\033[01;31m','\n------------------------------------------------------------','\033[00m', sep='')
     print_yellow()
     print(len(fully_correct_questions), 'questions were answered completely correct: ')
     print('\033[01;31m','------------------------------------------------------------','\033[00m', sep='')
-
     for q in fully_correct_questions:
         print(q)
+    print('\033[01;31m','\n------------------------------------------------------------','\033[00m', sep='')
+    print_yellow()
+    print('Models that answered a question correctly while the other failed: ')
+    print('\033[01;31m','------------------------------------------------------------','\033[00m', sep='')
+    for m in exactly_one_correct_models:
+        if exactly_one_correct_models[m] != 0:
+            print(m, "->", exactly_one_correct_models[m], "times" )
+    
+def convert_evaluation_to_num(table):
+    temp_table = []
+    for item in table:
+        if item == 'yes':
+            temp_table.append(1)
+        elif item == 'no':
+            temp_table.append(0)
+        else:
+            temp_table.append(0.5)
+
+    return temp_table
+
+def plot_confidence_score_with_evaluation(model):
+    model_index = models.index(model)
+
+    scores, is_correct = get_model_scores(model)
+    
+    plt.scatter((is_correct), scores)
+    plt.title(model)
+    plt.xlabel("Is Correct")
+    plt.ylabel("Confidence Score")
+    plt.show()    
     
 
 if __name__ == "__main__":
@@ -169,11 +211,10 @@ if __name__ == "__main__":
         for j in range(questions_per_context):
             question_results.append(get_question_results(i, j))
     print_question_statistics(question_results)
-    
-    # converted_bing_model_evaluation = convert_model_is_correct_column_to_num(bing_model_evaluation)
 
-    # r = np.corrcoef(np.array(converted_bing_model_evaluation), np.array(bing_prediction_scores))
-    # print(r)
-    # plt.plot(converted_bing_model_evaluation, bing_prediction_scores)
+    for model in models:
+        plot_confidence_score_with_evaluation(model)
+        pass
 
     
+
