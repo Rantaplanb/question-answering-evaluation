@@ -1,0 +1,61 @@
+Bing translator invalidated 4/200 questions due to bad translation.
+    For model distilbert-base-uncased-distilled-squad :
+        Correct: 112
+        Partially correct: 23
+        Wrong: 61
+        Percentage: 63.01 %
+---------------------------------------------------
+    For model distilbert-base-cased-distilled-squad :
+        Correct: 114
+        Partially correct: 23
+        Wrong: 59
+        Percentage: 64.03 %
+---------------------------------------------------
+    For model deepset/bert-base-cased-squad2 :
+        Correct: 110
+        Partially correct: 31
+        Wrong: 55
+        Percentage: 64.03 %
+---------------------------------------------------
+    For model rsvp-ai/bertserini-bert-base-squad :
+        Correct: 118
+        Partially correct: 30
+        Wrong: 48
+        Percentage: 67.86 %
+---------------------------------------------------
+    For model deepset/minilm-uncased-squad2 :
+        Correct: 122
+        Partially correct: 25
+        Wrong: 49
+        Percentage: 68.62 %
+---------------------------------------------------
+    For model deepset/roberta-base-squad2 :
+        Correct: 130
+        Partially correct: 24
+        Wrong: 42
+        Percentage: 72.45 %
+---------------------------------------------------
+    For model bert-large-uncased-whole-word-masking-finetuned-squad :
+        Correct: 131
+        Partially correct: 25
+        Wrong: 40
+        Percentage: 73.21 %
+---------------------------------------------------
+    For model bert-large-cased-whole-word-masking-finetuned-squad :
+        Correct: 132
+        Partially correct: 27
+        Wrong: 37
+        Percentage: 74.23 %
+---------------------------------------------------
+    For model deepset/bert-large-uncased-whole-word-masking-squad2 :
+        Correct: 133
+        Partially correct: 26
+        Wrong: 37
+        Percentage: 74.49 %
+---------------------------------------------------
+    For model dmis-lab/biobert-large-cased-v1.1-squad :
+        Correct: 135
+        Partially correct: 25
+        Wrong: 36
+        Percentage: 75.26 %
+---------------------------------------------------
