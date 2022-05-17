@@ -213,8 +213,5 @@ if __name__ == "__main__":
     print_question_statistics(question_results)
 
     for model in models:
-        plot_confidence_score_with_evaluation(model)
+        # plot_confidence_score_with_evaluation(model)
         pass
-
-    
-
