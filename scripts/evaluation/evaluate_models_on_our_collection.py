@@ -5,13 +5,14 @@ from functools import cmp_to_key
 import statistics
 
 
-translator = 'bing'
+translator = 'helsinki'
 total_contexts = 20
 questions_per_context = 10
 model_count = 10
 
 def get_data(translator):
     return pd.read_csv('../../resources/csv_files/questions_with_answers_from_all_models_on_our_collection_' + translator + '.csv', encoding='utf16')
+    # return pd.read_csv('../../resources/csv_files/questions_with_answers_from_all_models_on_xsquad_helsinki_with_is_correct.csv', encoding='utf16')
 
 data = get_data(translator)
 is_correct_col = data['is_correct']
@@ -250,13 +251,13 @@ if __name__ == "__main__":
     for i in range(model_count):
         model_results.append(get_model_results(models[i]))
     invalid_count = model_results[-1]['invalid'] * 10
-    # print_model_statistics(invalid_count)
+    print_model_statistics(model_results)
 
     question_results = []
     for i in range(total_contexts):
         for j in range(questions_per_context):
             question_results.append(get_question_results(i, j))
-    # print_question_statistics(question_results)
+    print_question_statistics(question_results)
 
     for model in models:
         print_confidence_statistics(model)
