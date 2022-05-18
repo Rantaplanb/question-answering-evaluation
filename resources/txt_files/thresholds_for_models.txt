@@ -1,0 +1,39 @@
+deepset/roberta-base-squad2
+threshold-1 : conf_score > 0.8 | 93.3333333333% correct | 6,67777777 % partially correct 
+threshold-2 : conf_score > 0.6 | 87.9310344828% correct | 8.6206896552% partially correct | 3.4482758621% wrong
+threshold-3 : conf_score > 0.4 | 82.7586206897% correct | 8.6206896552% partiall correct | 8.6206896552% wrong
+
+bert-large-uncased-whole-word-masking-finetuned-squad
+threshold-1 conf_score > 0.8 | 86.3636363636 correct | 6.8181818182 partially correct | 6.8181818182 wrong
+threshold-2 conf_score > 0.7 | 83.8709677419 correct | 6.4516129032 partially correct |  9.6774193548 wrong 
+threshold-3 conf_score > 0.5 | 77.8761061947 correct | 8.8495575221 partially correct |  13.2743362832 wrong
+
+distilbert-base-cased-distilled-squad
+threshold-1 conf_score > 0.93 | 88 correct | 4 partially correct | 8 wrong
+threshold-2 conf_score > 0.8   | 69.5652173913 correct | 10.8695652174 partially correct | 19.5652173913 wrong
+threshold-3 conf_score > 0.5   | 68.8073394495 correct | 8.25688073390 partially correct | 22.9357798165 wrong
+
+deepset/bert-large-uncased-whole-word-masking-squad2
+threshold-1 conf_score > 0.8 | 92.5 correct | 5 partially correct | 2.5 wrong
+threshold-2 conf_score > 0.6 | 80.9523809524 correct | 7.1428571429 partially correct | 11.9047619048 wrong
+threshold-3 conf_score >
+
+
+threshold-1 conf_score > 
+threshold-2 conf_score > 
+threshold-3 conf_score >
+
+
+threshold-1 conf_score > 
+threshold-2 conf_score > 
+threshold-3 conf_score >
+
+
+threshold-1 conf_score > 
+threshold-2 conf_score > 
+threshold-3 conf_score >
+
+
+threshold-1 conf_score > 
+threshold-2 conf_score > 
+threshold-3 conf_score >

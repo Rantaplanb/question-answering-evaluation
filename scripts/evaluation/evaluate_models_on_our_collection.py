@@ -2,6 +2,8 @@ import pandas as pd
 import numpy as np
 from matplotlib import pyplot as plt
 from functools import cmp_to_key
+import statistics
+
 
 translator = 'bing'
 total_contexts = 20
@@ -196,22 +198,67 @@ def plot_confidence_score_with_evaluation(model):
     plt.title(model)
     plt.xlabel("Is Correct")
     plt.ylabel("Confidence Score")
-    plt.show()    
+    plt.show()
+
+def print_ranges(conf_scores, answer):
+    step = 0.1 
+    j = 0
+    percentage_counter = 0
+    for i in range(10):
+        counter = 0
+        while(j < len(conf_scores) and step >= conf_scores[j]):
+            j += 1
+            counter += 1
+        percentage_counter += counter
+        print('In confidence range [', "{:.1f}".format(step - 0.1) , '-', "{:.1f}".format(step), ']:', counter , answer, 'answers', '{:.1f}'.format(counter / len(conf_scores) * 100), '%', '\t| Total Percantage so far' , '{:.1f}'.format(percentage_counter / len(conf_scores) * 100), '%')
+        step += 0.1
+    print('-------------------------------------------------------------------------------------------------')
+
+def print_confidence_statistics(model):
+    scores, is_correct = get_model_scores(model)
+
+    correct_answers_conf_scores = []
+    wrong_answers_conf_scores = []
+    partially_correct_answers_conf_scores = []
+    for i in range(len(is_correct)):
+        if is_correct[i] == 'yes':
+            correct_answers_conf_scores.append(scores[i])
+        elif is_correct[i] == 'no':
+            wrong_answers_conf_scores.append(scores[i])
+        elif is_correct[i] == 'partially':
+            partially_correct_answers_conf_scores.append(scores[i])
+
+    correct_answers_conf_scores.sort()
+    wrong_answers_conf_scores.sort()
+    partially_correct_answers_conf_scores.sort()
+
+    print('For ', model, ':')
+    print('-------------------------------------------------------------------------------------------------')
+    print('For correct answers:{ Average: ', "{:.3f}".format(sum(correct_answers_conf_scores) / len(correct_answers_conf_scores)), ', Median: ', "{:.3f}".format(statistics.median(correct_answers_conf_scores)), '}', sep='')
+    print('For wrong answers:{ Average: ', "{:.3f}".format(sum(wrong_answers_conf_scores) / len(wrong_answers_conf_scores)), ', Median: ', "{:.3f}".format(statistics.median(wrong_answers_conf_scores)), '}', sep='')
+    print('For partially correct answers:{ Average: ', "{:.3f}".format(sum(partially_correct_answers_conf_scores) / len(partially_correct_answers_conf_scores)), ', Median: ', "{:.3f}".format(statistics.median(partially_correct_answers_conf_scores)), '}', sep='')
+    print('-------------------------------------------------------------------------------------------------')
+    print_ranges(correct_answers_conf_scores, 'correct')
+    print_ranges(wrong_answers_conf_scores, 'wrong')
+    print_ranges(partially_correct_answers_conf_scores, 'partially correct')
+
     
+
 
 if __name__ == "__main__":
     model_results = []
     for i in range(model_count):
         model_results.append(get_model_results(models[i]))
     invalid_count = model_results[-1]['invalid'] * 10
-    #print_model_statistics(invalid_count)
+    # print_model_statistics(invalid_count)
 
     question_results = []
     for i in range(total_contexts):
         for j in range(questions_per_context):
             question_results.append(get_question_results(i, j))
-    print_question_statistics(question_results)
+    # print_question_statistics(question_results)
 
     for model in models:
-        # plot_confidence_score_with_evaluation(model)
-        pass
+        print_confidence_statistics(model)
+        plot_confidence_score_with_evaluation(model)
+        print()
