@@ -5,7 +5,7 @@ from functools import cmp_to_key
 import statistics
 
 
-translator = 'helsinki'
+translator = 'bing'
 total_contexts = 20
 questions_per_context = 10
 model_count = 10
@@ -261,5 +261,7 @@ if __name__ == "__main__":
 
     for model in models:
         print_confidence_statistics(model)
-        plot_confidence_score_with_evaluation(model)
+        #plot_confidence_score_with_evaluation(model)
+        print()
+        print()
         print()
