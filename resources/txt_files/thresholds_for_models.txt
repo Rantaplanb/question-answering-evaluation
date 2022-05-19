@@ -16,24 +16,30 @@ threshold-3 conf_score > 0.5   | 68.8073394495 correct | 8.25688073390 partially
 deepset/bert-large-uncased-whole-word-masking-squad2
 threshold-1 conf_score > 0.8 | 92.5 correct | 5 partially correct | 2.5 wrong
 threshold-2 conf_score > 0.6 | 80.9523809524 correct | 7.1428571429 partially correct | 11.9047619048 wrong
-threshold-3 conf_score >
+threshold-3 conf_score > 0.4 | 77.44360902255639 correct | 8.270676691729323 partially correct | 14.28571428571429 wrong
+
+distilbert-base-uncased-distilled-squad 
+threshold-1 conf_score > 0.6 | 72.94117647058824 correct | 9.411764705882353 partially correct | 17.64705882352941 wrong
+
+rsvp-ai/bertserini-bert-base-squad
+threshold-1 conf_score > 0.9 | 83.33333333333333 correct | 12.5 partially correct| 4.166666666666667 wrong
+threshold-2 conf_score > 0.7 | 84.48275862068966 correct | 10.3448275862069partially correct | 5.172413793103448 wrong
+
+deepset/minilm-uncased-squad2
+threshold-1 conf_score > 0.9 | 88.46153846153846 correct | 11.53846153846154 partially correct 
+threshold-2 conf_score > 0.8 | 79.48717948717949 correct | 17.94871794871795 partially correct | 2.564102564102564 wrong
+threshold-3 conf_score > 0.4 | 71.96969696969697 correct | 11.36363636363636 partially correct | 16.66666666666667 wrong
+
+dmis-lab/biobert-large-cased-v1.1-squad
+threshold-1 conf_score > 0.9 | 87.5 correct | 12.5 partially correct
+threshold-2 conf_score > 0.6 | 85.26315789473684 correct | 7.368421052631579 partially correct | 7.368421052631579 wrong
 
 
-threshold-1 conf_score > 
-threshold-2 conf_score > 
-threshold-3 conf_score >
+deepset/bert-base-cased-squad2
+threshold-1 conf_score > 0.7 | 79.24528301886792 correct | 13.20754716981132 partially correct| 7.547169811320759 wrong
+threshold-2 conf_score > 0.5 | 77.89473684210526 correct | 12.63157894736842 partially correct | 9.473684210526316 wrong
 
-
-threshold-1 conf_score > 
-threshold-2 conf_score > 
-threshold-3 conf_score >
-
-
-threshold-1 conf_score > 
-threshold-2 conf_score > 
-threshold-3 conf_score >
-
-
-threshold-1 conf_score > 
-threshold-2 conf_score > 
-threshold-3 conf_score >
+bert-large-cased-whole-word-masking-finetuned-squad
+threshold-1 conf_score > 0.9 | 96 correct | 4 wrong
+threshold-2 conf_score > 0.8 | 86.36363636363636 correct | 9.090909090909091 partially correct | 4.545454545454545 wrong
+threshold-3 conf_score > 0.5 | 77.27272727272727 correct | 12.72727272727273 partially correct | 10 wrong
