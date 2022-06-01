@@ -4,15 +4,17 @@ from matplotlib import pyplot as plt
 from functools import cmp_to_key
 import statistics
 
+our_context_count = 20
+xsquad_context_count = 118
 
-translator = 'bing'
-total_contexts = 20
+translator = 'helsinki'
+total_contexts = xsquad_context_count
 questions_per_context = 10
 model_count = 10
 
 def get_data(translator):
-    return pd.read_csv('../../resources/csv_files/questions_with_answers_from_all_models_on_our_collection_' + translator + '.csv', encoding='utf16')
-    # return pd.read_csv('../../resources/csv_files/questions_with_answers_from_all_models_on_xsquad_helsinki_with_is_correct.csv', encoding='utf16')
+    # return pd.read_csv('../../resources/csv_files/questions_with_answers_from_all_models_on_our_collection_' + translator + '.csv', encoding='utf16')
+    return pd.read_csv('../../resources/csv_files/questions_with_answers_from_all_models_on_xsquad_helsinki_with_is_correct.csv', encoding='utf16')
 
 data = get_data(translator)
 is_correct_col = data['is_correct']
