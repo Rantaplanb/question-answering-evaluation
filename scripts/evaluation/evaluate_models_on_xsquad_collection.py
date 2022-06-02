@@ -5,7 +5,7 @@ from difflib import SequenceMatcher
 from sentence_transformers import SentenceTransformer, util
 
 input_file = '../../resources/csv_files/questions_with_answers_from_all_models_with_helsinki_cleaned.csv'
-output_file = '../../resources/csv_files/questions_with_answers_from_all_models_on_xsquad_bing.csv'
+output_file = '../../resources/csv_files/questions_with_answers_from_all_models_on_xsquad_helsinkii.csv'
 
 def count_common_words(s0, s1):
     s0 = s0.lower()
@@ -36,8 +36,8 @@ with open(output_file, 'a', encoding='UTF16') as file:
         write_format_flag = True
         weighted_scores = []
         for j in range(10):
-            model_answer = model_answers[i*10 + j]
-            correct_answer = correct_answers[i*10 + j]
+            model_answer = model_answers[i*10 + j].lower().replace('.', '').replace(',', '').replace('\'', '').replace('\"', '').replace('-', '')
+            correct_answer = correct_answers[i*10 + j].lower().replace('.', '').replace(',', '').replace('\'', '').replace('\"', '').replace('-', ' ')
 
             #Calculate scores:
             levenshtein_distance = Levenshtein.distance(model_answer, correct_answer)
@@ -57,11 +57,11 @@ with open(output_file, 'a', encoding='UTF16') as file:
             recall = common_words_count / len(correct_answer.split(" "))
             f1_score = 0 if precision == 0 and recall == 0 else (2 * precision * recall) / (precision + recall)
 
-            weighted_score = nlp_score * 0.3 + levenshtein_score * 0.2 + substring_score * 0.2 + sentence_transformers_score * 0.2 + f1_score * 0.1
+            weighted_score = nlp_score * 0.2 + levenshtein_score * 0.15 + substring_score * 0.2 + sentence_transformers_score * 0.25 + f1_score * 0.2
             weighted_scores.append(weighted_score)
 
             if write_format_flag is True:
-                writer.writerow([questions[i*10], models[j], model_answer, correct_answer, model_prediction_scores[i*10 + j], nlp_score, levenshtein_score, substring_score, sentence_transformers_score, f1_score, weighted_score])
+                writer.writerow([questions[i*10], models[j], model_answers[i*10 + j], correct_answers[i*10 + j], model_prediction_scores[i*10 + j], nlp_score, levenshtein_score, substring_score, sentence_transformers_score, f1_score, weighted_score])
                 write_format_flag = False           
             else:
-                writer.writerow(['', models[j], model_answer, correct_answer, model_prediction_scores[i*10 + j], nlp_score, levenshtein_score, substring_score, sentence_transformers_score, f1_score, weighted_score])
+                writer.writerow(['', models[j], model_answers[i*10 + j], correct_answers[i*10 + j], model_prediction_scores[i*10 + j], nlp_score, levenshtein_score, substring_score, sentence_transformers_score, f1_score, weighted_score])

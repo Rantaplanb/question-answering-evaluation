@@ -2,8 +2,10 @@ import pandas as pd
 from utils import translator
 import re
 
-input_file = '../resources/csv_files/questions_with_answers_from_all_models_with_helsinki_translator.csv'
-output_file = '../resources/csv_files/tmp.csv'
+input_file = '../resources/csv_files/questions_with_answers_from_all_models_with_bing_translator.csv'
+output_file = '../resources/csv_files/questions_with_answers_from_all_models_with_bing_cleaned.csv'
+
+translator_name = 'bing'
 
 #Checks if there are greek letters in the string:
 def is_translatable(string):
@@ -20,7 +22,7 @@ translated_correct_answers = []
 for answer in correct_answers:
     print(answer)
     if is_translatable(answer):
-        translated_correct_answers.append(translator.translate(answer, 'helsinki', 'el', 'en'))
+        translated_correct_answers.append(translator.translate(answer, translator_name, 'el', 'en'))
     else:
         translated_correct_answers.append(answer)
 

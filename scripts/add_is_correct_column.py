@@ -12,9 +12,9 @@ weighted_scores = data['weighted_total_score']
 is_correct = []
 for answer in weighted_scores:
     print(answer)
-    if float(answer) > 0.68:
+    if float(answer) > 0.74:
         is_correct.append('yes')
-    elif float(answer) > 0.5:
+    elif float(answer) > 0.566:
         is_correct.append('partially')
     else:
         is_correct.append('no')
