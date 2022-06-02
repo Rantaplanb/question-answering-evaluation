@@ -1,8 +1,8 @@
 import pandas as pd
 import re
 
-input_file = '../resources/csv_files/questions_with_answers_from_all_models_on_xsquad_bing.csv'
-output_file = '../resources/csv_files/questions_with_answers_from_all_models_on_xsquad_bing_with_is_correct.csv'
+input_file = '../resources/csv_files/questions_with_answers_from_all_models_on_xsquad_helsinki_v2.csv'
+output_file = '../resources/csv_files/questions_with_answers_from_all_models_on_xsquad_helsinkii_with_is_correct.csv'
 
 
 
@@ -12,9 +12,9 @@ weighted_scores = data['weighted_total_score']
 is_correct = []
 for answer in weighted_scores:
     print(answer)
-    if float(answer) > 0.74:
+    if float(answer) > 0.68:
         is_correct.append('yes')
-    elif float(answer) > 0.566:
+    elif float(answer) > 0.5:
         is_correct.append('partially')
     else:
         is_correct.append('no')

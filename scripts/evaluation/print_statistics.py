@@ -14,7 +14,7 @@ model_count = 10
 
 def get_data(translator):
     # return pd.read_csv('../../resources/csv_files/questions_with_answers_from_all_models_on_our_collection_' + translator + '.csv', encoding='utf16')
-    return pd.read_csv('../../resources/csv_files/questions_with_answers_from_all_models_on_xsquad_helsinki_with_is_correct.csv', encoding='utf16')
+    return pd.read_csv('../../resources/csv_files/questions_with_answers_from_all_models_on_xsquad_helsinki_with_is_correct_v2.csv', encoding='utf16')
 
 data = get_data(translator)
 is_correct_col = data['is_correct']
