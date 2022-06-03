@@ -6,7 +6,7 @@ from textblob import TextBlob
 from utils.sentenceDetector import splitToSentences, splitText
 import time
 
-google_translator = Translator()
+# google_translator = Translator()
 
 tokenizer_gr_to_en = AutoTokenizer.from_pretrained("Helsinki-NLP/opus-mt-grk-en")
 model_gr_to_en = AutoModelForSeq2SeqLM.from_pretrained("Helsinki-NLP/opus-mt-grk-en")
@@ -14,7 +14,7 @@ model_gr_to_en = AutoModelForSeq2SeqLM.from_pretrained("Helsinki-NLP/opus-mt-grk
 tokenizer_en_to_gr = AutoTokenizer.from_pretrained("Helsinki-NLP/opus-mt-en-el")
 model_en_to_gr = AutoModelForSeq2SeqLM.from_pretrained("Helsinki-NLP/opus-mt-en-el")
 
-goslate_translator = goslate.Goslate()
+# goslate_translator = goslate.Goslate()
 
 # Map greek and english words.
 greek_to_english = {}

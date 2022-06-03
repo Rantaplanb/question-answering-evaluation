@@ -1,6 +1,6 @@
 import pandas as pd
 
-input_file = '../resources/csv_files/questions_with_answers_from_all_models_with_helsinki_cleaned.csv'
+input_file = '../../resources/csv_files/questions_with_answers_from_all_models_with_helsinki_cleaned.csv'
 output_file = '../resources/csv_files/tmp.csv'
 
 data = pd.read_csv(input_file, encoding='UTF-16')
