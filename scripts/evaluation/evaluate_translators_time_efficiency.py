@@ -11,7 +11,7 @@ from utils import translator
 
 input_json_filepath = '../../resources/json_files/greek_text_QnA_collection.json'
 
-trans = 'helsinki'
+trans = 'bing'
 
 f = open(input_json_filepath, encoding='utf16')
 json_data = json.load(f)['collection']
