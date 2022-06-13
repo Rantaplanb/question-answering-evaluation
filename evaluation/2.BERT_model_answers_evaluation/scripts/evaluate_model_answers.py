@@ -1,3 +1,4 @@
+from cmath import nan
 import spacy, csv, os
 import pandas as pd
 import Levenshtein
@@ -75,7 +76,7 @@ def calc_f1_score(correct_answer, model_answer):
     common_words_count = count_common_words(model_answer, correct_answer)
     precision = common_words_count / len(model_answer.split(" "))
     recall = common_words_count / len(correct_answer.split(" "))
-    return 0 if precision == 0 and recall == 0 else (2 * precision * recall) / (precision + recall)
+    return 0 if precision == 0 and recall == 0 else float("{:.3f}".format((2 * precision * recall) / (precision + recall)))
 
 
 def calculate_scores(correct_answers, model_answers, weights):
@@ -108,6 +109,34 @@ def calculate_scores(correct_answers, model_answers, weights):
     scores['total'] = total_scores
     return scores
 
+def check_weights(weights):
+    total = 0
+    for weight in weights.values():
+        total += weight 
+    if total != 1:
+        print('Incorrect sum of weights...')
+        return False
+    return True
+
+
+def select_weights():
+    weights = {'nlp': 0.2, 'levenshtein': 0.1, 'substring': 0.1, 'sentence_transformers': 0.4, 'f1': 0.2}
+    print('\nTo select a weight for each string comparison metric, enter a number in the range [0, 1].')
+    print('The sum of all given weights, must be equal to 1.')
+    print('If you want to use the default weights, press enter.\n')
+    for metric in weights.keys():
+        if metric == 'nlp':
+            user_input = input('NLP weight: ')
+        else:
+            user_input = input(metric.capitalize() + ' weight: ')
+        if user_input == '':
+            print('Default weights were set!')
+            break
+        else:
+            weights[metric] = float(user_input)
+
+    return weights if check_weights(weights) else exit(1)
+
 
 def write_headers(filename, headers):
     with open('../output_data/' + filename, 'w', encoding='UTF16') as file:
@@ -125,17 +154,17 @@ def write_scores(data, scores, filename):
         writer = csv.writer(file)
         for i in range(len(scores['total'])):
             writer.writerow([
-                data['question'][i], 
-                data['model'][i % len(data['model'])],
-                data['gr_correct_answer'],
-                data['gr_model_answer'],
-                data['en_correct_answer'],
-                data['en_model_answer'],
-                data['confidence_score'],
+                '' if str(data['questions'][i]) == 'nan' else data['questions'][i], 
+                data['models'][i % len(data['models'])],
+                data['gr_correct_answers'][i],
+                data['gr_model_answers'][i],
+                data['en_correct_answers'][i],
+                data['en_model_answers'][i],
+                data['confidence_scores'][i],
                 scores['nlp'][i],
                 scores['levenshtein'][i],
                 scores['substring'][i],
-                scores['sentence_transformer'][i],
+                scores['sentence_transformers'][i],
                 scores['f1'][i],
                 scores['total'][i]
             ])
@@ -146,7 +175,8 @@ if __name__ == "__main__":
     input_filename = select_input_file(input_dir)
 
     data = get_QnA_results(input_dir + input_filename)
-    scores = calculate_scores(data['en_correct_answer'], data['en_model_answer'], )
+    weights = select_weights()
+    scores = calculate_scores(data['en_correct_answers'], data['en_model_answers'], weights)
 
     output_filename = get_output_filename(input_filename)
     write_scores(data, scores, output_filename)
