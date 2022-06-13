@@ -61,7 +61,8 @@ def get_models():
     "deepset/minilm-uncased-squad2",
     "dmis-lab/biobert-large-cased-v1.1-squad",
     "deepset/bert-base-cased-squad2",
-    "bert-large-cased-whole-word-masking-finetuned-squad"
+    "bert-large-cased-whole-word-masking-finetuned-squad", 
+    "deepset/tinyroberta-squad2"
     ]
 
 
@@ -80,20 +81,55 @@ def QnA_on_custom_dataset(dataset, output_file):
             en_question = translate(questions[i], translator, 'el', 'en')
             print('Question: ', en_question)
             result_rows = []
+            question = en_question
             for j in range(len(models)):
                 result, elapsed_time = answer_question(en_context, en_question, models[j])
                 gr_model_answer = translate(result['answer'], translator, src='en', dest='el')
-                translated_correct_answer = translate(answers[i], translator, src='el', dest='en')
-                result_rows.append([questions[i], models[j], answers[i], gr_model_answer, translated_correct_answer, result['answer'], elapsed_time, result['score']])
-            with open(output_file, 'a', encoding='UTF16') as file:
+                en_correct_answer = translate(answers[i], translator, src='el', dest='en')
+                result_rows.append([question, models[j], answers[i], gr_model_answer, en_correct_answer, result['answer'], elapsed_time, result['score']])
+                question = ''
+            with open('../output_data/' + output_file, 'a', encoding='UTF16') as file:
                 writer = csv.writer(file)
                 for k in range(len(result_rows)):
                     writer.writerow(result_rows[k])
-
+                    
 
 def QnA_on_xquad(dataset, output_file):
-    pass
+    headers = ['question', 'model', 'gr_correct_answer', 'gr_model_answer', 'en_correct_answer', 'en_model_answer', 'model_response_time', 'confidence_score']
+    write_headers(output_file, headers)
 
+    models = get_models()
+    for subject in dataset:
+        paragraphs = subject["paragraphs"]
+        for QnA in paragraphs:      
+            en_context = translate(QnA['context'], translator, 'el', 'en')
+            print('Context:', en_context)
+            for qna in QnA["qas"]:
+                en_question = translate(qna["question"], translator, 'el', 'en')
+                print('Question: ', en_question)
+                result_rows = []
+                question = en_question
+                for i in range(len(models)):
+                    result, elapsed_time = answer_question(en_context, en_question, models[i])
+                    gr_model_answer = translate(result['answer'], translator, src='en', dest='el')
+                    en_correct_answer = translate(qna['answers'][0]['text'], translator, src='el', dest='en')
+                    result_rows.append([question, models[i], qna['answers'][0]['text'], gr_model_answer, en_correct_answer, result['answer'], elapsed_time, result['score']])
+                    question = ""
+                with open('../output_data/' + output_file, 'a', encoding='UTF16') as file:
+                    writer = csv.writer(file)
+                    for j in range(len(result_rows)):
+                        writer.writerow(result_rows[j])
+
+"""
+---Script Configuration---
+- To execute question answering with a different BERT model set, 
+  just modify the model list that is returned by get_models() function.
+- To add your own input QnA dataset:
+    1) Add your own json file to the ${PROJECT_ROOT}/resources/json_files/ directory.
+    2) Modify get_dataset() to load your json file.
+    3) Implement your own QnA_on_${DATASET_NAME} function using answer_question(). 
+    4) Add a case in main() for your json dataset and call your function implemented in (3).
+"""
 if __name__ == '__main__':
     input_dir = '../../../resources/json_files/'
     input_filename = select_input_file(input_dir)
