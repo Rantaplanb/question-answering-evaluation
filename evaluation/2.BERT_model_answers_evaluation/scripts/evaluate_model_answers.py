@@ -1,5 +1,5 @@
 from cmath import nan
-import spacy, csv, os
+import spacy, csv, os, sys
 import pandas as pd
 import Levenshtein
 from difflib import SequenceMatcher
@@ -12,6 +12,8 @@ sentence_transformer_multilingual = SentenceTransformer('sentence-transformers/d
 
 
 def select_input_file(input_dir_path):
+    if '-input' in sys.argv:
+        return sys.argv[sys.argv.index('-input') + 1]
     input_files = os.listdir(input_dir_path)
     print('The available input files are:')
     for i in range(len(input_files)):
@@ -113,27 +115,36 @@ def check_weights(weights):
     total = 0
     for weight in weights.values():
         total += weight 
-    if total != 1:
+    if (1.0 - total) < -0.0001 or (1.0 - total) > 0.0001:
         print('Incorrect sum of weights...')
         return False
     return True
 
 
 def select_weights():
-    weights = {'nlp': 0.2, 'levenshtein': 0.1, 'substring': 0.1, 'sentence_transformers': 0.4, 'f1': 0.2}
-    print('\nTo select a weight for each string comparison metric, enter a number in the range [0, 1].')
-    print('The sum of all given weights, must be equal to 1.')
-    print('If you want to use the default weights, press enter.\n')
-    for metric in weights.keys():
-        if metric == 'nlp':
-            user_input = input('NLP weight: ')
-        else:
-            user_input = input(metric.capitalize() + ' weight: ')
-        if user_input == '':
-            print('Default weights were set!')
-            break
-        else:
-            weights[metric] = float(user_input)
+    if '--weights' in sys.argv:
+        weights =  {
+            'nlp': float(sys.argv[sys.argv.index('-nlp') + 1]),
+            'levenshtein': float(sys.argv[sys.argv.index('-levenshtein') + 1]),
+            'substring': float(sys.argv[sys.argv.index('-substring') + 1]),
+            'sentence_transformers': float(sys.argv[sys.argv.index('-sentence_trans') + 1]),
+            'f1': float(sys.argv[sys.argv.index('-f1') + 1])
+        }
+    else:
+        weights = {'nlp': 0.2, 'levenshtein': 0.1, 'substring': 0.1, 'sentence_transformers': 0.4, 'f1': 0.2}
+        print('\nTo select a weight for each string comparison metric, enter a number in the range [0, 1].')
+        print('The sum of all given weights, must be equal to 1.')
+        print('If you want to use the default weights, press enter.\n')
+        for metric in weights.keys():
+            if metric == 'nlp':
+                user_input = input('NLP weight: ')
+            else:
+                user_input = input(metric.capitalize() + ' weight: ')
+            if user_input == '':
+                print('Default weights were set!')
+                break
+            else:
+                weights[metric] = float(user_input)
 
     return weights if check_weights(weights) else exit(1)
 
