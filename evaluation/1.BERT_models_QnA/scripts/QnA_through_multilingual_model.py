@@ -1,4 +1,4 @@
-import csv, json, os
+import csv, json, os, sys
 from transformers import pipeline
 import time
 
@@ -66,6 +66,8 @@ def QnA_on_xquad(dataset, output_file, model):
 
 
 def select_input_file(input_dir_path):
+    if '-input' in sys.argv:
+        return sys.argv[sys.argv.index('-input') + 1]
     input_files = os.listdir(input_dir_path)
     print('The available input files are:')
     for i in range(len(input_files)):

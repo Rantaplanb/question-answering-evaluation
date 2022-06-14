@@ -28,6 +28,8 @@ def write_headers(filename, headers):
 
 
 def select_input_file(input_dir_path):
+    if '-input' in sys.argv:
+        return sys.argv[sys.argv.index('-input') + 1]
     input_files = os.listdir(input_dir_path)
     print('The available input files are:')
     for i in range(len(input_files)):
@@ -41,6 +43,8 @@ def select_input_file(input_dir_path):
         exit(0)
 
 def select_translator():
+    if '-trans' in sys.argv:
+        return sys.argv[sys.argv.index('-trans') + 1]
     print('The available translators are:\n1) Bing\n2) Helsinki ')
     choice = input('Select translator number: ')
     if choice.isdigit() and int(choice) > 0 and int(choice) <= 2:
