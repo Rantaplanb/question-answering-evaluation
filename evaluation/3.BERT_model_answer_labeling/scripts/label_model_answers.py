@@ -1,5 +1,5 @@
 import pandas as pd
-import re
+import sys, os
 
 def select_input_file(input_dir_path):
     if '-input' in sys.argv:
@@ -16,48 +16,34 @@ def select_input_file(input_dir_path):
         print('Terminating ...')
         exit(0)
 
+
 def get_input_data(input_filepath):
     return pd.read_csv(input_filepath, encoding='UTF-16')
 
 
-def write_model_answer_labels(data, output_file):
-    total_scores = data['total_score']
-    is_correct = []
-    for total_score in total_scores:
-        if float(total_score) > 0.65:
-            is_correct.append('yes')
-        elif float(total_score) > 0.5:
-            is_correct.append('partially')
+def scores_to_labels(scores):
+    labels = []
+    for score in scores:
+        if float(score) > 0.65:
+            labels.append('yes')
+        elif float(score) > 0.5:
+            labels.append('partially')
         else:
-            is_correct.append('no')
-    data['is_correct (labeled by machine)'] = is_correct
+            labels.append('no')
+    return labels
+
+
+def write_data_to_csv(data, output_file):
     data.to_csv('../output_data/' + output_file, sep=',', encoding='UTF-16', index=False)
 
 
 if __name__ == '__main__':
     input_dir = '../../2.BERT_model_answers_evaluation/output_data/'
     input_filename = select_input_file(input_dir)
+    output_filename = input_filename.replace('evaluated_answers', 'QnA').replace('.csv', '_auto_labeled.csv')
 
     data = get_input_data(input_dir + input_filename)
 
-    output_filename = ''
-    if 'custom' in input_filename:
-        if 'bing' in input_filename:
-            output_filename = 'QnA_on_custom_dataset_with_bing_fully_labeled.csv'
-        elif 'helsinki' in input_filename:
-            output_filename = 'QnA_on_custom_dataset_with_helsinki_fully_labeled.csv'
-        else:
-            #TODO: Ti kanoume me to multilingual???
-            pass
-    elif 'xquad' in input_filename:
-        if 'bing' in input_filename:
-            output_filename = 'QnA_on_xquad_with_bing_auto_labeled.csv'
-        elif 'helsinki' in input_filename:
-            output_filename = 'QnA_on_xquad_with_helsinki_auto_labeled.csv'
-        else:
-            #TODO: Ti kanoume me to multilingual???
-            pass
-    else:
-        print('no mans land')
-
-    write_model_answer_labels(data, output_filename)
+    labels = scores_to_labels(data['total_score'])
+    data['is_correct (labeled by machine)'] = labels
+    write_data_to_csv(data, output_filename)
