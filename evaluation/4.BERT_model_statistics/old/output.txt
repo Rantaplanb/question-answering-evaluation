@@ -923,3 +923,44 @@ In confidence range [ 0.9 - 1.0 ]: 2 partially correct answers 22.2 % 	| Total P
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+row = ['yes', 'partially', 'no']
+    step = 0.1
+    totals = {'yes': 0, 'partially': 0, 'no': 0}
+    for i in range(len(models)):
+        for o in range(10):
+            pdf.set_font('OpenSans', 'BI', size=6)
+            pdf.multi_cell(45, 10, "{:2.1f}".format(step-0.1) + " - " + "{:2.1f}".format(step), 1, align='C', new_x='RIGHT', new_y='TOP', max_line_height=120)
+            totals['yes'] = len(model_conf_scores[i]['yes'])
+            totals['partially'] = len(model_conf_scores[i]['partially'])
+            totals['no'] = len(model_conf_scores[i]['no'])
+            for cell in row:
+                index = 0
+                for j in model_conf_scores[i][cell]:
+                    if j > step:
+                        index = model_conf_scores[i][cell].index(j)
+                        model_conf_scores[i][cell] = model_conf_scores[i][cell][index:]
+                        break
+                pdf.set_font('OpenSans', 'I', size=6)
+                pdf.multi_cell(45, 10, str(index+1) + " (" + str("{:2.1f}".format((index + 1) * 100 / totals[cell])) + "%)", 1, align='C', new_x='RIGHT', new_y='TOP', max_line_height=120)
+            pdf.ln(10)
+            step += 0.1
+        step = 0.1
+        pdf.ln(10)
+    pdf.ln(2)
+    pdf.set_font('opensans', 'I', size=6)
+    pdf.cell(txt='**The range refers to the confidence score that accompanies each model answer.')
+    pdf.ln(25)
