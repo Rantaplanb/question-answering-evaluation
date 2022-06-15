@@ -1,0 +1,925 @@
+For model distilbert-base-uncased-distilled-squad :
+Correct: 139
+Partially correct: 17
+Wrong: 44
+Percentage: 73.75 %
+---------------------------------------------------
+For model deepset/bert-base-cased-squad2 :
+Correct: 144
+Partially correct: 8
+Wrong: 48
+Percentage: 74.00 %
+---------------------------------------------------
+For model rsvp-ai/bertserini-bert-base-squad :
+Correct: 144
+Partially correct: 11
+Wrong: 45
+Percentage: 74.75 %
+---------------------------------------------------
+For model distilbert-base-cased-distilled-squad :
+Correct: 144
+Partially correct: 12
+Wrong: 44
+Percentage: 75.00 %
+---------------------------------------------------
+For model deepset/minilm-uncased-squad2 :
+Correct: 150
+Partially correct: 8
+Wrong: 42
+Percentage: 77.00 %
+---------------------------------------------------
+For model dmis-lab/biobert-large-cased-v1.1-squad :
+Correct: 158
+Partially correct: 11
+Wrong: 31
+Percentage: 81.75 %
+---------------------------------------------------
+For model bert-large-cased-whole-word-masking-finetuned-squad :
+Correct: 161
+Partially correct: 9
+Wrong: 30
+Percentage: 82.75 %
+---------------------------------------------------
+For model deepset/roberta-base-squad2 :
+Correct: 163
+Partially correct: 7
+Wrong: 30
+Percentage: 83.25 %
+---------------------------------------------------
+For model bert-large-uncased-whole-word-masking-finetuned-squad :
+Correct: 163
+Partially correct: 9
+Wrong: 28
+Percentage: 83.75 %
+---------------------------------------------------
+For model deepset/bert-large-uncased-whole-word-masking-squad2 :
+Correct: 165
+Partially correct: 8
+Wrong: 27
+Percentage: 84.50 %
+---------------------------------------------------
+[01;31m------------------------------------------------------------[00m
+[01;33m0  questions were invalid due to incorrect translation: 
+[01;31m------------------------------------------------------------[00m
+[01;31m
+------------------------------------------------------------[00m
+[01;33m9 questions were answered completely wrong: 
+[01;31m------------------------------------------------------------[00m
+Who lost from the Broncos on the divisional network?
+Who did the Broncos win the divisional game?
+Who did the Broncos win in their 2015 division?
+Which areas are all the registration numbers of cars of the same type?
+Who, by his coming, gave a common identity to the early Viking colonists?
+What is the time needed to extract a reply with a Turing Determinist?
+What happens to the average age of teachers in Wales?
+What are the attacks on teachers?
+What should at least have a teacher at a public school?
+[01;31m
+------------------------------------------------------------[00m
+[01;33m5 questions were answered correctly by exactly one model: 
+[01;31m------------------------------------------------------------[00m
+Who lost the ball on the 3rd and 9th?
+What player threw the ball out of two?
+In a computational problem, what can be described as a string on an alphabet?
+How did Luther name the operation instead of a sacrifice?
+South California’s communities are known except for being large, spread, what other features do they have?
+[01;31m
+------------------------------------------------------------[00m
+[01;33m184 questions were answered correctly by at least one model: 
+[01;31m------------------------------------------------------------[00m
+Who lost the ball on the 3rd and 9th?
+What player threw the ball out of two?
+In a computational problem, what can be described as a string on an alphabet?
+How did Luther name the operation instead of a sacrifice?
+South California’s communities are known except for being large, spread, what other features do they have?
+What did Marly Mattlin translate?
+Where was the Summer Theatre?
+Who is the anthem known in English?
+What player had most interceptions for the season?
+What kind of area can be found in the urban area of southern California?
+What is the most important price in assessing the ability of a Turing machine to solve any given set of problems?
+Who was the main enemy of the Normans in Italy, the Byzantine Empire and Armenia?
+If two integers multiply and export a price, what is this set called?
+What can a semi-private school require teachers to meet high-level qualifications standards?
+What was discovered later that was written by Luther?
+What is the fact that is generally attributed to the value of the classes of complexity?
+Who had most of the sacks on the Panthers?
+Who's got the record of the older-age Quarterback in Super Bowl's story?
+What's the last name of the player that finally regained the ball Newton lost in the fourth quarter?
+What interrupted the operation of the Warsaw Stock Exchange?
+Where is the physical punishment no longer applicable?
+In what area does spiritual guidance become extremely great?
+What has Lama decided to do?
+How did Luther describe the function considered to be a sacrifice?
+What position is the big city of southern California, in terms of population at national level?
+Who won the Broncos to be AFC champions?
+What award has Marly Mattlin won?
+What is the name of the alphabet most often used in a stigmatized problem?
+What is the other term used to string a stigmatic problem?
+Who recorded most of the sacks on the team this season?
+Who was the Panthers' best stack for 2015?
+Which team was the winner of the divisional network between the Broncos and the Stellers?
+Where can RP, BPP, PP, BQP, MA and PH be detected?
+What's NASUWT?
+Which part of Luther's career was one of his most productive?
+What did Luther say to the monks and nuns for their vows?
+Which Carolina Panthers defensive was punished for holding in third down?
+Who was the beneficiary of the successful conversion of the two points?
+What was the name of the leader who received a nobility title from Henry III?
+To what was the name of Tesla in 1960 of the General Conference of Metro and Stations?
+The decision by which entity restored Tesla's patents?
+In coding mathematical objects, how are the integers usually expressed?
+What is the expression used to identify any given set of problems that can be solved within a certain time with a Terminal Turing Machine?
+What did Tesla Electric Light & Manufacturing do?
+How many seconds were they staying in the game when the Broncos stole the pass that won the game?
+Who had the record of the older man at the age of Quarterback who played in Super Bowl?
+Where was John Elway playing in Super Bowl XXXII?
+Before Manning, who was the oldest Quarterback ever played in Super Bowl?
+How much time did Denver get to play when she scored 24-10?
+What percentage of the Warsaw population were Protestants in 1901?
+When did the Warsaw Stock Exchange come back to work?
+How did Tesla fund his work?
+Who designed the lighting systems installed by Tesla Electric Light & Manufacturing?
+In the title of the article, what was the machine hoping for?
+In the United States, who decides on teachers' prerequisites?
+Is there a large or small concentration in spiritual guidance in Hinduism?
+How much has Lama agreed to be reborn?
+After the compulsory confession had been rejected, what did Luther ask for?
+When were most of the places of religious worship destroyed in Warsaw?
+Which group can we enlist to the teachers of Wales?
+What helped Lama decide to regenerate?
+How many balls did Josh Norman interception do?
+How many Panther defensive players were selected for Pro Bowl?
+Who had five sacks in nine games as Carolina Panthers' key?
+Who won Super Bowl XLIX?
+What was the final score of the game between Bronco and Stellers?
+Who won Super Bowl XLIX?
+Who did the Broncos win the game for the AFC Championship?
+What role does John Elway have today in the Branchise of the Bronkos?
+Who sang Super Bowl's National Anthem 50?
+Who regained the lost ball?
+What player did he take criticism of not dived to regain the ball?
+What's the name of the player who took the ball from Newton at the end of the fourth quarter?
+What's the last name of the player who scored 2-yard touchdown in the fourth quarter?
+What is the second level of territorial division in Poland?
+What was called Tesla in honor of it?
+What did Tesla first receive after he started his company?
+In what language was most of the statement written?
+Who sang the national anthem?
+Open to the coast, which continent are the Canary Islands?
+Where did Tesla live for a large part of his life?
+What did Lane and Vail finance?
+What did Tesla Electric Light & Manufacturing do?
+What evidence of complexity would give rise to a theoretical turning point in the theory of complexity?
+Why were Johann Esch and Heinrich Voes executed by the Catholic Church?
+How many points did the Panthers defense give in?
+How many sacks did Jared Allen have in his career?
+How many stacks did Luke Kuechly record?
+How many interceptions did the Panther defense have in 2015?
+How much forced fumbles did Thomas Davis have?
+How many interceptions did the Panther defense get for the 2015 season?
+How many points did the Broncos score for the last three minutes of the game against Pittsburgh?
+What was the final score of the AFC Championship?
+How long was he staying on the watch when the Bronkos did the interception that closed the AFC Championship game?
+During the Bronco Playoff games, who didn't throw at all?
+How many points did the Broncos score in the last three minutes of the Pittsburgh race?
+How many seconds were they staying in the game when the Patriots failed at the 2-point converse?
+How old was Peyton Manning playing in Super Bowl 50?
+How old was John Elway playing in Super Bowl XXXIII?
+Which team was the winner of Super Bowl XXXIII?
+Who's the Director General of the Bronkos?
+How old was Elway when he won Super Bowl XXXIII?
+How many teams has Manning played to get to Super Boole while he was on the team?
+Peyton Manning with how many different teams did he go to Super Boole?
+Who's the oldest Quarterback ever played in Super Bowl?
+Which Super Bowl won Elway at 38?
+Who was the first Quarterback to go with two teams to more than a Super Boole?
+How old was Manning playing in Super Bowl 50?
+What's the name of Quorterback who was 38 years old in Super Bowl XXXIII?
+What did Lady Gaga sing?
+In what language did Marly Mattlin translate the national anthem?
+What actor did the translation in sign language for the game?
+Who sang the National Anthem at Super Bowl 50?
+What actor made the National Anthem in sign language in Superbowl 50?
+How many Grammy Awards does the text say that Lady Gaga won?
+Who did the translation in sign language for the National Anthem in Super Bowl 50?
+On what yard line did the Carolina Panthers start with 4:51 remaining in the game?
+Who lost the ball from Newton on 3rd and 9?
+What Carolina Panthers player got a sentence, which gave the Broncos two new downs?
+How long did Carolina Panthers' players get the ball on their 24-yard line in the fourth quarter?
+How many plays did Denver stay away from the endzone after he had taken the ball from Newton?
+What's the name of the Saxon Park in Polish?
+What time did the Summer Theatre work?
+What was Warsaw's first literary cabaret?
+What was the best example of a "memorandum of Polish theatre"?
+When did Polonia Warsaw win the country's championship before 2000?
+How many times did Polonia win the cup?
+Where is Polonia's seat?
+Why was Polonia demolished from the country's top category in 2013?
+What kind of city was Warsaw always like?
+What was Warsaw's population in 1901?
+From the Warsaw inhabitants in 1901, what percentage were Catholics?
+When was Warsaw's first stock exchange set up?
+How many companies were listed on WSE in August 2009?
+Which former headquarters were WSE housed by the year 2000?
+Who was the Count of Melfi?
+What was the name of the Norman castle?
+Who did the Normands work with in Anatolia?
+What year did Tesla die?
+What was Tesla's reputation in popular culture?
+What year did Tesla die?
+When did people start showing interest in Tesla again?
+Who did Tesla work with in 1886?
+What did Tesla's company produce?
+What were the names of Tesla's new partners?
+When was the cooperation between Tesla, Lane and Vail?
+What was the name of the company that the entrepreneurs financed?
+When did Tesla get the license for the power transmitter?
+Who first sent radio waves beyond the Atlantic?
+When was Marconi's radio show?
+When did Tesla's patents get restored?
+How many nominations were there for the prize in 1915?
+Who received a candidacy in 1915?
+What year did Tesla get a Nobel Prize?
+What article was published in 1937?
+Because of certain statements, what is believed to be the state of his religious views?
+What branch of computer theoretical science is widely involved in classifying computing problems based on difficulty and equivalence?
+Based on what main feature are computational problems classified in the computational theory of complexity?
+What term is used for a work that can generally be resolved by a computer?
+How can function problems be reprinted?
+Based on what main status does the theory of complexity classify problems?
+How common was the form of physical punishment in the past?
+Which western country is still allowed to be punished physically?
+What US body reported that physical punishment was a constitutional one?
+What does physical punishment cause a student?
+When was the attacks on teachers more?
+What is the longer period of validity of a teaching certificate?
+Who may not require teachers to be certified?
+What is the name of the spiritual teacher in Hinduism?
+What's the name of a teacher in Tibetan Buddhism?
+What's the name of a Bodhisattva oath?
+When did Luther’s writings spread to France, England and Italy?
+Who went to Wittenberg to hear Luther speak?
+When were any of Luther's most famous works published?
+In addition to publishing the work "for Christian aristocracy of the German nation" and the work "for the captivity of the church of Babylon", what other work did Luther do in 1520?
+When did Luther broaden his attacks to include the basic doctrines of the Church?
+At Martin Luther's time, what was he demanding?
+What did the popularity of Luther's translation contribute to?
+What artist gave the cartoons for Luther’s Bible?
+Who was the English translation of the Bible influenced by Luther’s Bible?
+Which anthem did Luther write after the torture of Esch and the Voes?
+Who is the English translator of this hymn?
+Which part of Luther's last statement was in German?
+In addition to the use of cars, what else is famous for its use in the southern part of California?
+[01;31m
+------------------------------------------------------------[00m
+[01;33m117 questions had no wrong answers (only correct or partially correct): 
+[01;31m------------------------------------------------------------[00m
+Who won the Ekstraklasa Championship in 2000?
+Who was the leader when the Francois entered the valley of Euphrates?
+Apart from his scientific achievements, why was Tesla famous?
+What did Luther say to the monks and nuns for their vows?
+What did Tesla Electric Light & Manufacturing do?
+In the title of the article, what was the machine hoping for?
+After the compulsory confession had been rejected, what did Luther ask for?
+When were most of the places of religious worship destroyed in Warsaw?
+How many Panther defensive players were selected for Pro Bowl?
+Who did the Broncos win the game for the AFC Championship?
+What was called Tesla in honor of it?
+Who sang the national anthem?
+Open to the coast, which continent are the Canary Islands?
+Where did Tesla live for a large part of his life?
+What did Lane and Vail finance?
+What did Tesla Electric Light & Manufacturing do?
+What evidence of complexity would give rise to a theoretical turning point in the theory of complexity?
+Why were Johann Esch and Heinrich Voes executed by the Catholic Church?
+How many points did the Panthers defense give in?
+How many sacks did Jared Allen have in his career?
+How many stacks did Luke Kuechly record?
+How many interceptions did the Panther defense have in 2015?
+How much forced fumbles did Thomas Davis have?
+How many interceptions did the Panther defense get for the 2015 season?
+How many points did the Broncos score for the last three minutes of the game against Pittsburgh?
+What was the final score of the AFC Championship?
+How long was he staying on the watch when the Bronkos did the interception that closed the AFC Championship game?
+During the Bronco Playoff games, who didn't throw at all?
+How many points did the Broncos score in the last three minutes of the Pittsburgh race?
+How many seconds were they staying in the game when the Patriots failed at the 2-point converse?
+How old was Peyton Manning playing in Super Bowl 50?
+How old was John Elway playing in Super Bowl XXXIII?
+Which team was the winner of Super Bowl XXXIII?
+Who's the Director General of the Bronkos?
+How old was Elway when he won Super Bowl XXXIII?
+How many teams has Manning played to get to Super Boole while he was on the team?
+Peyton Manning with how many different teams did he go to Super Boole?
+Who's the oldest Quarterback ever played in Super Bowl?
+Which Super Bowl won Elway at 38?
+Who was the first Quarterback to go with two teams to more than a Super Boole?
+How old was Manning playing in Super Bowl 50?
+What's the name of Quorterback who was 38 years old in Super Bowl XXXIII?
+What did Lady Gaga sing?
+In what language did Marly Mattlin translate the national anthem?
+What actor did the translation in sign language for the game?
+Who sang the National Anthem at Super Bowl 50?
+What actor made the National Anthem in sign language in Superbowl 50?
+How many Grammy Awards does the text say that Lady Gaga won?
+Who did the translation in sign language for the National Anthem in Super Bowl 50?
+On what yard line did the Carolina Panthers start with 4:51 remaining in the game?
+Who lost the ball from Newton on 3rd and 9?
+What Carolina Panthers player got a sentence, which gave the Broncos two new downs?
+How long did Carolina Panthers' players get the ball on their 24-yard line in the fourth quarter?
+How many plays did Denver stay away from the endzone after he had taken the ball from Newton?
+What's the name of the Saxon Park in Polish?
+What time did the Summer Theatre work?
+What was Warsaw's first literary cabaret?
+What was the best example of a "memorandum of Polish theatre"?
+When did Polonia Warsaw win the country's championship before 2000?
+How many times did Polonia win the cup?
+Where is Polonia's seat?
+Why was Polonia demolished from the country's top category in 2013?
+What kind of city was Warsaw always like?
+What was Warsaw's population in 1901?
+From the Warsaw inhabitants in 1901, what percentage were Catholics?
+When was Warsaw's first stock exchange set up?
+How many companies were listed on WSE in August 2009?
+Which former headquarters were WSE housed by the year 2000?
+Who was the Count of Melfi?
+What was the name of the Norman castle?
+Who did the Normands work with in Anatolia?
+What year did Tesla die?
+What was Tesla's reputation in popular culture?
+What year did Tesla die?
+When did people start showing interest in Tesla again?
+Who did Tesla work with in 1886?
+What did Tesla's company produce?
+What were the names of Tesla's new partners?
+When was the cooperation between Tesla, Lane and Vail?
+What was the name of the company that the entrepreneurs financed?
+When did Tesla get the license for the power transmitter?
+Who first sent radio waves beyond the Atlantic?
+When was Marconi's radio show?
+When did Tesla's patents get restored?
+How many nominations were there for the prize in 1915?
+Who received a candidacy in 1915?
+What year did Tesla get a Nobel Prize?
+What article was published in 1937?
+Because of certain statements, what is believed to be the state of his religious views?
+What branch of computer theoretical science is widely involved in classifying computing problems based on difficulty and equivalence?
+Based on what main feature are computational problems classified in the computational theory of complexity?
+What term is used for a work that can generally be resolved by a computer?
+How can function problems be reprinted?
+Based on what main status does the theory of complexity classify problems?
+How common was the form of physical punishment in the past?
+Which western country is still allowed to be punished physically?
+What US body reported that physical punishment was a constitutional one?
+What does physical punishment cause a student?
+When was the attacks on teachers more?
+What is the longer period of validity of a teaching certificate?
+Who may not require teachers to be certified?
+What is the name of the spiritual teacher in Hinduism?
+What's the name of a teacher in Tibetan Buddhism?
+What's the name of a Bodhisattva oath?
+When did Luther’s writings spread to France, England and Italy?
+Who went to Wittenberg to hear Luther speak?
+When were any of Luther's most famous works published?
+In addition to publishing the work "for Christian aristocracy of the German nation" and the work "for the captivity of the church of Babylon", what other work did Luther do in 1520?
+When did Luther broaden his attacks to include the basic doctrines of the Church?
+At Martin Luther's time, what was he demanding?
+What did the popularity of Luther's translation contribute to?
+What artist gave the cartoons for Luther’s Bible?
+Who was the English translation of the Bible influenced by Luther’s Bible?
+Which anthem did Luther write after the torture of Esch and the Voes?
+Who is the English translator of this hymn?
+Which part of Luther's last statement was in German?
+In addition to the use of cars, what else is famous for its use in the southern part of California?
+[01;31m
+------------------------------------------------------------[00m
+[01;33m99 questions were answered completely correct: 
+[01;31m------------------------------------------------------------[00m
+How many points did the Panthers defense give in?
+How many sacks did Jared Allen have in his career?
+How many stacks did Luke Kuechly record?
+How many interceptions did the Panther defense have in 2015?
+How much forced fumbles did Thomas Davis have?
+How many interceptions did the Panther defense get for the 2015 season?
+How many points did the Broncos score for the last three minutes of the game against Pittsburgh?
+What was the final score of the AFC Championship?
+How long was he staying on the watch when the Bronkos did the interception that closed the AFC Championship game?
+During the Bronco Playoff games, who didn't throw at all?
+How many points did the Broncos score in the last three minutes of the Pittsburgh race?
+How many seconds were they staying in the game when the Patriots failed at the 2-point converse?
+How old was Peyton Manning playing in Super Bowl 50?
+How old was John Elway playing in Super Bowl XXXIII?
+Which team was the winner of Super Bowl XXXIII?
+Who's the Director General of the Bronkos?
+How old was Elway when he won Super Bowl XXXIII?
+How many teams has Manning played to get to Super Boole while he was on the team?
+Peyton Manning with how many different teams did he go to Super Boole?
+Who's the oldest Quarterback ever played in Super Bowl?
+Which Super Bowl won Elway at 38?
+Who was the first Quarterback to go with two teams to more than a Super Boole?
+How old was Manning playing in Super Bowl 50?
+What's the name of Quorterback who was 38 years old in Super Bowl XXXIII?
+What did Lady Gaga sing?
+In what language did Marly Mattlin translate the national anthem?
+What actor did the translation in sign language for the game?
+Who sang the National Anthem at Super Bowl 50?
+What actor made the National Anthem in sign language in Superbowl 50?
+How many Grammy Awards does the text say that Lady Gaga won?
+Who did the translation in sign language for the National Anthem in Super Bowl 50?
+On what yard line did the Carolina Panthers start with 4:51 remaining in the game?
+Who lost the ball from Newton on 3rd and 9?
+What Carolina Panthers player got a sentence, which gave the Broncos two new downs?
+How long did Carolina Panthers' players get the ball on their 24-yard line in the fourth quarter?
+How many plays did Denver stay away from the endzone after he had taken the ball from Newton?
+What's the name of the Saxon Park in Polish?
+What time did the Summer Theatre work?
+What was Warsaw's first literary cabaret?
+What was the best example of a "memorandum of Polish theatre"?
+When did Polonia Warsaw win the country's championship before 2000?
+How many times did Polonia win the cup?
+Where is Polonia's seat?
+Why was Polonia demolished from the country's top category in 2013?
+What kind of city was Warsaw always like?
+What was Warsaw's population in 1901?
+From the Warsaw inhabitants in 1901, what percentage were Catholics?
+When was Warsaw's first stock exchange set up?
+How many companies were listed on WSE in August 2009?
+Which former headquarters were WSE housed by the year 2000?
+Who was the Count of Melfi?
+What was the name of the Norman castle?
+Who did the Normands work with in Anatolia?
+What year did Tesla die?
+What was Tesla's reputation in popular culture?
+What year did Tesla die?
+When did people start showing interest in Tesla again?
+Who did Tesla work with in 1886?
+What did Tesla's company produce?
+What were the names of Tesla's new partners?
+When was the cooperation between Tesla, Lane and Vail?
+What was the name of the company that the entrepreneurs financed?
+When did Tesla get the license for the power transmitter?
+Who first sent radio waves beyond the Atlantic?
+When was Marconi's radio show?
+When did Tesla's patents get restored?
+How many nominations were there for the prize in 1915?
+Who received a candidacy in 1915?
+What year did Tesla get a Nobel Prize?
+What article was published in 1937?
+Because of certain statements, what is believed to be the state of his religious views?
+What branch of computer theoretical science is widely involved in classifying computing problems based on difficulty and equivalence?
+Based on what main feature are computational problems classified in the computational theory of complexity?
+What term is used for a work that can generally be resolved by a computer?
+How can function problems be reprinted?
+Based on what main status does the theory of complexity classify problems?
+How common was the form of physical punishment in the past?
+Which western country is still allowed to be punished physically?
+What US body reported that physical punishment was a constitutional one?
+What does physical punishment cause a student?
+When was the attacks on teachers more?
+What is the longer period of validity of a teaching certificate?
+Who may not require teachers to be certified?
+What is the name of the spiritual teacher in Hinduism?
+What's the name of a teacher in Tibetan Buddhism?
+What's the name of a Bodhisattva oath?
+When did Luther’s writings spread to France, England and Italy?
+Who went to Wittenberg to hear Luther speak?
+When were any of Luther's most famous works published?
+In addition to publishing the work "for Christian aristocracy of the German nation" and the work "for the captivity of the church of Babylon", what other work did Luther do in 1520?
+When did Luther broaden his attacks to include the basic doctrines of the Church?
+At Martin Luther's time, what was he demanding?
+What did the popularity of Luther's translation contribute to?
+What artist gave the cartoons for Luther’s Bible?
+Who was the English translation of the Bible influenced by Luther’s Bible?
+Which anthem did Luther write after the torture of Esch and the Voes?
+Who is the English translator of this hymn?
+Which part of Luther's last statement was in German?
+In addition to the use of cars, what else is famous for its use in the southern part of California?
+[01;31m
+------------------------------------------------------------[00m
+[01;33mModels that answered a question correctly while the other failed: 
+[01;31m------------------------------------------------------------[00m
+deepset/roberta-base-squad2 -> 1 times
+bert-large-uncased-whole-word-masking-finetuned-squad -> 1 times
+distilbert-base-cased-distilled-squad -> 2 times
+dmis-lab/biobert-large-cased-v1.1-squad -> 1 times
+For  deepset/roberta-base-squad2 :
+-------------------------------------------------------------------------------------------------
+For correct answers:{ Average: 0.597, Median: 0.654}
+For wrong answers:{ Average: 0.302, Median: 0.212}
+For partially correct answers:{ Average: 0.418, Median: 0.375}
+-------------------------------------------------------------------------------------------------
+In confidence range [ 0.0 - 0.1 ]: 11 correct answers 6.7 % 	| Total Percantage so far 6.7 %
+In confidence range [ 0.1 - 0.2 ]: 12 correct answers 7.4 % 	| Total Percantage so far 14.1 %
+In confidence range [ 0.2 - 0.3 ]: 8 correct answers 4.9 % 	| Total Percantage so far 19.0 %
+In confidence range [ 0.3 - 0.4 ]: 14 correct answers 8.6 % 	| Total Percantage so far 27.6 %
+In confidence range [ 0.4 - 0.5 ]: 11 correct answers 6.7 % 	| Total Percantage so far 34.4 %
+In confidence range [ 0.5 - 0.6 ]: 17 correct answers 10.4 % 	| Total Percantage so far 44.8 %
+In confidence range [ 0.6 - 0.7 ]: 17 correct answers 10.4 % 	| Total Percantage so far 55.2 %
+In confidence range [ 0.7 - 0.8 ]: 21 correct answers 12.9 % 	| Total Percantage so far 68.1 %
+In confidence range [ 0.8 - 0.9 ]: 25 correct answers 15.3 % 	| Total Percantage so far 83.4 %
+In confidence range [ 0.9 - 1.0 ]: 27 correct answers 16.6 % 	| Total Percantage so far 100.0 %
+-------------------------------------------------------------------------------------------------
+In confidence range [ 0.0 - 0.1 ]: 8 wrong answers 26.7 % 	| Total Percantage so far 26.7 %
+In confidence range [ 0.1 - 0.2 ]: 7 wrong answers 23.3 % 	| Total Percantage so far 50.0 %
+In confidence range [ 0.2 - 0.3 ]: 2 wrong answers 6.7 % 	| Total Percantage so far 56.7 %
+In confidence range [ 0.3 - 0.4 ]: 2 wrong answers 6.7 % 	| Total Percantage so far 63.3 %
+In confidence range [ 0.4 - 0.5 ]: 3 wrong answers 10.0 % 	| Total Percantage so far 73.3 %
+In confidence range [ 0.5 - 0.6 ]: 3 wrong answers 10.0 % 	| Total Percantage so far 83.3 %
+In confidence range [ 0.6 - 0.7 ]: 4 wrong answers 13.3 % 	| Total Percantage so far 96.7 %
+In confidence range [ 0.7 - 0.8 ]: 0 wrong answers 0.0 % 	| Total Percantage so far 96.7 %
+In confidence range [ 0.8 - 0.9 ]: 1 wrong answers 3.3 % 	| Total Percantage so far 100.0 %
+In confidence range [ 0.9 - 1.0 ]: 0 wrong answers 0.0 % 	| Total Percantage so far 100.0 %
+-------------------------------------------------------------------------------------------------
+In confidence range [ 0.0 - 0.1 ]: 1 partially correct answers 14.3 % 	| Total Percantage so far 14.3 %
+In confidence range [ 0.1 - 0.2 ]: 1 partially correct answers 14.3 % 	| Total Percantage so far 28.6 %
+In confidence range [ 0.2 - 0.3 ]: 1 partially correct answers 14.3 % 	| Total Percantage so far 42.9 %
+In confidence range [ 0.3 - 0.4 ]: 1 partially correct answers 14.3 % 	| Total Percantage so far 57.1 %
+In confidence range [ 0.4 - 0.5 ]: 0 partially correct answers 0.0 % 	| Total Percantage so far 57.1 %
+In confidence range [ 0.5 - 0.6 ]: 0 partially correct answers 0.0 % 	| Total Percantage so far 57.1 %
+In confidence range [ 0.6 - 0.7 ]: 2 partially correct answers 28.6 % 	| Total Percantage so far 85.7 %
+In confidence range [ 0.7 - 0.8 ]: 0 partially correct answers 0.0 % 	| Total Percantage so far 85.7 %
+In confidence range [ 0.8 - 0.9 ]: 1 partially correct answers 14.3 % 	| Total Percantage so far 100.0 %
+In confidence range [ 0.9 - 1.0 ]: 0 partially correct answers 0.0 % 	| Total Percantage so far 100.0 %
+-------------------------------------------------------------------------------------------------
+
+
+
+For  bert-large-uncased-whole-word-masking-finetuned-squad :
+-------------------------------------------------------------------------------------------------
+For correct answers:{ Average: 0.714, Median: 0.797}
+For wrong answers:{ Average: 0.428, Median: 0.371}
+For partially correct answers:{ Average: 0.541, Median: 0.508}
+-------------------------------------------------------------------------------------------------
+In confidence range [ 0.0 - 0.1 ]: 3 correct answers 1.8 % 	| Total Percantage so far 1.8 %
+In confidence range [ 0.1 - 0.2 ]: 3 correct answers 1.8 % 	| Total Percantage so far 3.7 %
+In confidence range [ 0.2 - 0.3 ]: 6 correct answers 3.7 % 	| Total Percantage so far 7.4 %
+In confidence range [ 0.3 - 0.4 ]: 14 correct answers 8.6 % 	| Total Percantage so far 16.0 %
+In confidence range [ 0.4 - 0.5 ]: 16 correct answers 9.8 % 	| Total Percantage so far 25.8 %
+In confidence range [ 0.5 - 0.6 ]: 16 correct answers 9.8 % 	| Total Percantage so far 35.6 %
+In confidence range [ 0.6 - 0.7 ]: 11 correct answers 6.7 % 	| Total Percantage so far 42.3 %
+In confidence range [ 0.7 - 0.8 ]: 13 correct answers 8.0 % 	| Total Percantage so far 50.3 %
+In confidence range [ 0.8 - 0.9 ]: 20 correct answers 12.3 % 	| Total Percantage so far 62.6 %
+In confidence range [ 0.9 - 1.0 ]: 61 correct answers 37.4 % 	| Total Percantage so far 100.0 %
+-------------------------------------------------------------------------------------------------
+In confidence range [ 0.0 - 0.1 ]: 1 wrong answers 3.6 % 	| Total Percantage so far 3.6 %
+In confidence range [ 0.1 - 0.2 ]: 2 wrong answers 7.1 % 	| Total Percantage so far 10.7 %
+In confidence range [ 0.2 - 0.3 ]: 5 wrong answers 17.9 % 	| Total Percantage so far 28.6 %
+In confidence range [ 0.3 - 0.4 ]: 7 wrong answers 25.0 % 	| Total Percantage so far 53.6 %
+In confidence range [ 0.4 - 0.5 ]: 2 wrong answers 7.1 % 	| Total Percantage so far 60.7 %
+In confidence range [ 0.5 - 0.6 ]: 6 wrong answers 21.4 % 	| Total Percantage so far 82.1 %
+In confidence range [ 0.6 - 0.7 ]: 1 wrong answers 3.6 % 	| Total Percantage so far 85.7 %
+In confidence range [ 0.7 - 0.8 ]: 3 wrong answers 10.7 % 	| Total Percantage so far 96.4 %
+In confidence range [ 0.8 - 0.9 ]: 0 wrong answers 0.0 % 	| Total Percantage so far 96.4 %
+In confidence range [ 0.9 - 1.0 ]: 1 wrong answers 3.6 % 	| Total Percantage so far 100.0 %
+-------------------------------------------------------------------------------------------------
+In confidence range [ 0.0 - 0.1 ]: 0 partially correct answers 0.0 % 	| Total Percantage so far 0.0 %
+In confidence range [ 0.1 - 0.2 ]: 2 partially correct answers 22.2 % 	| Total Percantage so far 22.2 %
+In confidence range [ 0.2 - 0.3 ]: 1 partially correct answers 11.1 % 	| Total Percantage so far 33.3 %
+In confidence range [ 0.3 - 0.4 ]: 0 partially correct answers 0.0 % 	| Total Percantage so far 33.3 %
+In confidence range [ 0.4 - 0.5 ]: 1 partially correct answers 11.1 % 	| Total Percantage so far 44.4 %
+In confidence range [ 0.5 - 0.6 ]: 1 partially correct answers 11.1 % 	| Total Percantage so far 55.6 %
+In confidence range [ 0.6 - 0.7 ]: 1 partially correct answers 11.1 % 	| Total Percantage so far 66.7 %
+In confidence range [ 0.7 - 0.8 ]: 0 partially correct answers 0.0 % 	| Total Percantage so far 66.7 %
+In confidence range [ 0.8 - 0.9 ]: 1 partially correct answers 11.1 % 	| Total Percantage so far 77.8 %
+In confidence range [ 0.9 - 1.0 ]: 2 partially correct answers 22.2 % 	| Total Percantage so far 100.0 %
+-------------------------------------------------------------------------------------------------
+
+
+
+For  distilbert-base-cased-distilled-squad :
+-------------------------------------------------------------------------------------------------
+For correct answers:{ Average: 0.725, Median: 0.796}
+For wrong answers:{ Average: 0.423, Median: 0.410}
+For partially correct answers:{ Average: 0.519, Median: 0.397}
+-------------------------------------------------------------------------------------------------
+In confidence range [ 0.0 - 0.1 ]: 1 correct answers 0.7 % 	| Total Percantage so far 0.7 %
+In confidence range [ 0.1 - 0.2 ]: 5 correct answers 3.5 % 	| Total Percantage so far 4.2 %
+In confidence range [ 0.2 - 0.3 ]: 5 correct answers 3.5 % 	| Total Percantage so far 7.6 %
+In confidence range [ 0.3 - 0.4 ]: 11 correct answers 7.6 % 	| Total Percantage so far 15.3 %
+In confidence range [ 0.4 - 0.5 ]: 9 correct answers 6.2 % 	| Total Percantage so far 21.5 %
+In confidence range [ 0.5 - 0.6 ]: 11 correct answers 7.6 % 	| Total Percantage so far 29.2 %
+In confidence range [ 0.6 - 0.7 ]: 12 correct answers 8.3 % 	| Total Percantage so far 37.5 %
+In confidence range [ 0.7 - 0.8 ]: 20 correct answers 13.9 % 	| Total Percantage so far 51.4 %
+In confidence range [ 0.8 - 0.9 ]: 16 correct answers 11.1 % 	| Total Percantage so far 62.5 %
+In confidence range [ 0.9 - 1.0 ]: 54 correct answers 37.5 % 	| Total Percantage so far 100.0 %
+-------------------------------------------------------------------------------------------------
+In confidence range [ 0.0 - 0.1 ]: 6 wrong answers 13.6 % 	| Total Percantage so far 13.6 %
+In confidence range [ 0.1 - 0.2 ]: 5 wrong answers 11.4 % 	| Total Percantage so far 25.0 %
+In confidence range [ 0.2 - 0.3 ]: 9 wrong answers 20.5 % 	| Total Percantage so far 45.5 %
+In confidence range [ 0.3 - 0.4 ]: 2 wrong answers 4.5 % 	| Total Percantage so far 50.0 %
+In confidence range [ 0.4 - 0.5 ]: 6 wrong answers 13.6 % 	| Total Percantage so far 63.6 %
+In confidence range [ 0.5 - 0.6 ]: 4 wrong answers 9.1 % 	| Total Percantage so far 72.7 %
+In confidence range [ 0.6 - 0.7 ]: 4 wrong answers 9.1 % 	| Total Percantage so far 81.8 %
+In confidence range [ 0.7 - 0.8 ]: 4 wrong answers 9.1 % 	| Total Percantage so far 90.9 %
+In confidence range [ 0.8 - 0.9 ]: 0 wrong answers 0.0 % 	| Total Percantage so far 90.9 %
+In confidence range [ 0.9 - 1.0 ]: 4 wrong answers 9.1 % 	| Total Percantage so far 100.0 %
+-------------------------------------------------------------------------------------------------
+In confidence range [ 0.0 - 0.1 ]: 0 partially correct answers 0.0 % 	| Total Percantage so far 0.0 %
+In confidence range [ 0.1 - 0.2 ]: 1 partially correct answers 8.3 % 	| Total Percantage so far 8.3 %
+In confidence range [ 0.2 - 0.3 ]: 1 partially correct answers 8.3 % 	| Total Percantage so far 16.7 %
+In confidence range [ 0.3 - 0.4 ]: 4 partially correct answers 33.3 % 	| Total Percantage so far 50.0 %
+In confidence range [ 0.4 - 0.5 ]: 2 partially correct answers 16.7 % 	| Total Percantage so far 66.7 %
+In confidence range [ 0.5 - 0.6 ]: 0 partially correct answers 0.0 % 	| Total Percantage so far 66.7 %
+In confidence range [ 0.6 - 0.7 ]: 1 partially correct answers 8.3 % 	| Total Percantage so far 75.0 %
+In confidence range [ 0.7 - 0.8 ]: 0 partially correct answers 0.0 % 	| Total Percantage so far 75.0 %
+In confidence range [ 0.8 - 0.9 ]: 1 partially correct answers 8.3 % 	| Total Percantage so far 83.3 %
+In confidence range [ 0.9 - 1.0 ]: 2 partially correct answers 16.7 % 	| Total Percantage so far 100.0 %
+-------------------------------------------------------------------------------------------------
+
+
+
+For  deepset/bert-large-uncased-whole-word-masking-squad2 :
+-------------------------------------------------------------------------------------------------
+For correct answers:{ Average: 0.503, Median: 0.515}
+For wrong answers:{ Average: 0.169, Median: 0.098}
+For partially correct answers:{ Average: 0.487, Median: 0.574}
+-------------------------------------------------------------------------------------------------
+In confidence range [ 0.0 - 0.1 ]: 28 correct answers 17.0 % 	| Total Percantage so far 17.0 %
+In confidence range [ 0.1 - 0.2 ]: 15 correct answers 9.1 % 	| Total Percantage so far 26.1 %
+In confidence range [ 0.2 - 0.3 ]: 9 correct answers 5.5 % 	| Total Percantage so far 31.5 %
+In confidence range [ 0.3 - 0.4 ]: 19 correct answers 11.5 % 	| Total Percantage so far 43.0 %
+In confidence range [ 0.4 - 0.5 ]: 10 correct answers 6.1 % 	| Total Percantage so far 49.1 %
+In confidence range [ 0.5 - 0.6 ]: 11 correct answers 6.7 % 	| Total Percantage so far 55.8 %
+In confidence range [ 0.6 - 0.7 ]: 14 correct answers 8.5 % 	| Total Percantage so far 64.2 %
+In confidence range [ 0.7 - 0.8 ]: 16 correct answers 9.7 % 	| Total Percantage so far 73.9 %
+In confidence range [ 0.8 - 0.9 ]: 11 correct answers 6.7 % 	| Total Percantage so far 80.6 %
+In confidence range [ 0.9 - 1.0 ]: 32 correct answers 19.4 % 	| Total Percantage so far 100.0 %
+-------------------------------------------------------------------------------------------------
+In confidence range [ 0.0 - 0.1 ]: 14 wrong answers 51.9 % 	| Total Percantage so far 51.9 %
+In confidence range [ 0.1 - 0.2 ]: 3 wrong answers 11.1 % 	| Total Percantage so far 63.0 %
+In confidence range [ 0.2 - 0.3 ]: 6 wrong answers 22.2 % 	| Total Percantage so far 85.2 %
+In confidence range [ 0.3 - 0.4 ]: 1 wrong answers 3.7 % 	| Total Percantage so far 88.9 %
+In confidence range [ 0.4 - 0.5 ]: 0 wrong answers 0.0 % 	| Total Percantage so far 88.9 %
+In confidence range [ 0.5 - 0.6 ]: 2 wrong answers 7.4 % 	| Total Percantage so far 96.3 %
+In confidence range [ 0.6 - 0.7 ]: 1 wrong answers 3.7 % 	| Total Percantage so far 100.0 %
+In confidence range [ 0.7 - 0.8 ]: 0 wrong answers 0.0 % 	| Total Percantage so far 100.0 %
+In confidence range [ 0.8 - 0.9 ]: 0 wrong answers 0.0 % 	| Total Percantage so far 100.0 %
+In confidence range [ 0.9 - 1.0 ]: 0 wrong answers 0.0 % 	| Total Percantage so far 100.0 %
+-------------------------------------------------------------------------------------------------
+In confidence range [ 0.0 - 0.1 ]: 2 partially correct answers 25.0 % 	| Total Percantage so far 25.0 %
+In confidence range [ 0.1 - 0.2 ]: 1 partially correct answers 12.5 % 	| Total Percantage so far 37.5 %
+In confidence range [ 0.2 - 0.3 ]: 0 partially correct answers 0.0 % 	| Total Percantage so far 37.5 %
+In confidence range [ 0.3 - 0.4 ]: 1 partially correct answers 12.5 % 	| Total Percantage so far 50.0 %
+In confidence range [ 0.4 - 0.5 ]: 0 partially correct answers 0.0 % 	| Total Percantage so far 50.0 %
+In confidence range [ 0.5 - 0.6 ]: 0 partially correct answers 0.0 % 	| Total Percantage so far 50.0 %
+In confidence range [ 0.6 - 0.7 ]: 0 partially correct answers 0.0 % 	| Total Percantage so far 50.0 %
+In confidence range [ 0.7 - 0.8 ]: 1 partially correct answers 12.5 % 	| Total Percantage so far 62.5 %
+In confidence range [ 0.8 - 0.9 ]: 2 partially correct answers 25.0 % 	| Total Percantage so far 87.5 %
+In confidence range [ 0.9 - 1.0 ]: 1 partially correct answers 12.5 % 	| Total Percantage so far 100.0 %
+-------------------------------------------------------------------------------------------------
+
+
+
+For  distilbert-base-uncased-distilled-squad :
+-------------------------------------------------------------------------------------------------
+For correct answers:{ Average: 0.696, Median: 0.733}
+For wrong answers:{ Average: 0.396, Median: 0.335}
+For partially correct answers:{ Average: 0.459, Median: 0.456}
+-------------------------------------------------------------------------------------------------
+In confidence range [ 0.0 - 0.1 ]: 0 correct answers 0.0 % 	| Total Percantage so far 0.0 %
+In confidence range [ 0.1 - 0.2 ]: 6 correct answers 4.3 % 	| Total Percantage so far 4.3 %
+In confidence range [ 0.2 - 0.3 ]: 7 correct answers 5.0 % 	| Total Percantage so far 9.4 %
+In confidence range [ 0.3 - 0.4 ]: 9 correct answers 6.5 % 	| Total Percantage so far 15.8 %
+In confidence range [ 0.4 - 0.5 ]: 12 correct answers 8.6 % 	| Total Percantage so far 24.5 %
+In confidence range [ 0.5 - 0.6 ]: 19 correct answers 13.7 % 	| Total Percantage so far 38.1 %
+In confidence range [ 0.6 - 0.7 ]: 14 correct answers 10.1 % 	| Total Percantage so far 48.2 %
+In confidence range [ 0.7 - 0.8 ]: 13 correct answers 9.4 % 	| Total Percantage so far 57.6 %
+In confidence range [ 0.8 - 0.9 ]: 9 correct answers 6.5 % 	| Total Percantage so far 64.0 %
+In confidence range [ 0.9 - 1.0 ]: 50 correct answers 36.0 % 	| Total Percantage so far 100.0 %
+-------------------------------------------------------------------------------------------------
+In confidence range [ 0.0 - 0.1 ]: 4 wrong answers 9.1 % 	| Total Percantage so far 9.1 %
+In confidence range [ 0.1 - 0.2 ]: 8 wrong answers 18.2 % 	| Total Percantage so far 27.3 %
+In confidence range [ 0.2 - 0.3 ]: 7 wrong answers 15.9 % 	| Total Percantage so far 43.2 %
+In confidence range [ 0.3 - 0.4 ]: 6 wrong answers 13.6 % 	| Total Percantage so far 56.8 %
+In confidence range [ 0.4 - 0.5 ]: 5 wrong answers 11.4 % 	| Total Percantage so far 68.2 %
+In confidence range [ 0.5 - 0.6 ]: 5 wrong answers 11.4 % 	| Total Percantage so far 79.5 %
+In confidence range [ 0.6 - 0.7 ]: 2 wrong answers 4.5 % 	| Total Percantage so far 84.1 %
+In confidence range [ 0.7 - 0.8 ]: 2 wrong answers 4.5 % 	| Total Percantage so far 88.6 %
+In confidence range [ 0.8 - 0.9 ]: 3 wrong answers 6.8 % 	| Total Percantage so far 95.5 %
+In confidence range [ 0.9 - 1.0 ]: 2 wrong answers 4.5 % 	| Total Percantage so far 100.0 %
+-------------------------------------------------------------------------------------------------
+In confidence range [ 0.0 - 0.1 ]: 1 partially correct answers 5.9 % 	| Total Percantage so far 5.9 %
+In confidence range [ 0.1 - 0.2 ]: 2 partially correct answers 11.8 % 	| Total Percantage so far 17.6 %
+In confidence range [ 0.2 - 0.3 ]: 3 partially correct answers 17.6 % 	| Total Percantage so far 35.3 %
+In confidence range [ 0.3 - 0.4 ]: 2 partially correct answers 11.8 % 	| Total Percantage so far 47.1 %
+In confidence range [ 0.4 - 0.5 ]: 3 partially correct answers 17.6 % 	| Total Percantage so far 64.7 %
+In confidence range [ 0.5 - 0.6 ]: 2 partially correct answers 11.8 % 	| Total Percantage so far 76.5 %
+In confidence range [ 0.6 - 0.7 ]: 0 partially correct answers 0.0 % 	| Total Percantage so far 76.5 %
+In confidence range [ 0.7 - 0.8 ]: 1 partially correct answers 5.9 % 	| Total Percantage so far 82.4 %
+In confidence range [ 0.8 - 0.9 ]: 1 partially correct answers 5.9 % 	| Total Percantage so far 88.2 %
+In confidence range [ 0.9 - 1.0 ]: 2 partially correct answers 11.8 % 	| Total Percantage so far 100.0 %
+-------------------------------------------------------------------------------------------------
+
+
+
+For  rsvp-ai/bertserini-bert-base-squad :
+-------------------------------------------------------------------------------------------------
+For correct answers:{ Average: 0.691, Median: 0.765}
+For wrong answers:{ Average: 0.309, Median: 0.234}
+For partially correct answers:{ Average: 0.399, Median: 0.251}
+-------------------------------------------------------------------------------------------------
+In confidence range [ 0.0 - 0.1 ]: 1 correct answers 0.7 % 	| Total Percantage so far 0.7 %
+In confidence range [ 0.1 - 0.2 ]: 3 correct answers 2.1 % 	| Total Percantage so far 2.8 %
+In confidence range [ 0.2 - 0.3 ]: 10 correct answers 6.9 % 	| Total Percantage so far 9.7 %
+In confidence range [ 0.3 - 0.4 ]: 14 correct answers 9.7 % 	| Total Percantage so far 19.4 %
+In confidence range [ 0.4 - 0.5 ]: 13 correct answers 9.0 % 	| Total Percantage so far 28.5 %
+In confidence range [ 0.5 - 0.6 ]: 12 correct answers 8.3 % 	| Total Percantage so far 36.8 %
+In confidence range [ 0.6 - 0.7 ]: 11 correct answers 7.6 % 	| Total Percantage so far 44.4 %
+In confidence range [ 0.7 - 0.8 ]: 13 correct answers 9.0 % 	| Total Percantage so far 53.5 %
+In confidence range [ 0.8 - 0.9 ]: 20 correct answers 13.9 % 	| Total Percantage so far 67.4 %
+In confidence range [ 0.9 - 1.0 ]: 47 correct answers 32.6 % 	| Total Percantage so far 100.0 %
+-------------------------------------------------------------------------------------------------
+In confidence range [ 0.0 - 0.1 ]: 6 wrong answers 13.3 % 	| Total Percantage so far 13.3 %
+In confidence range [ 0.1 - 0.2 ]: 12 wrong answers 26.7 % 	| Total Percantage so far 40.0 %
+In confidence range [ 0.2 - 0.3 ]: 12 wrong answers 26.7 % 	| Total Percantage so far 66.7 %
+In confidence range [ 0.3 - 0.4 ]: 3 wrong answers 6.7 % 	| Total Percantage so far 73.3 %
+In confidence range [ 0.4 - 0.5 ]: 2 wrong answers 4.4 % 	| Total Percantage so far 77.8 %
+In confidence range [ 0.5 - 0.6 ]: 5 wrong answers 11.1 % 	| Total Percantage so far 88.9 %
+In confidence range [ 0.6 - 0.7 ]: 2 wrong answers 4.4 % 	| Total Percantage so far 93.3 %
+In confidence range [ 0.7 - 0.8 ]: 0 wrong answers 0.0 % 	| Total Percantage so far 93.3 %
+In confidence range [ 0.8 - 0.9 ]: 3 wrong answers 6.7 % 	| Total Percantage so far 100.0 %
+In confidence range [ 0.9 - 1.0 ]: 0 wrong answers 0.0 % 	| Total Percantage so far 100.0 %
+-------------------------------------------------------------------------------------------------
+In confidence range [ 0.0 - 0.1 ]: 0 partially correct answers 0.0 % 	| Total Percantage so far 0.0 %
+In confidence range [ 0.1 - 0.2 ]: 3 partially correct answers 27.3 % 	| Total Percantage so far 27.3 %
+In confidence range [ 0.2 - 0.3 ]: 3 partially correct answers 27.3 % 	| Total Percantage so far 54.5 %
+In confidence range [ 0.3 - 0.4 ]: 1 partially correct answers 9.1 % 	| Total Percantage so far 63.6 %
+In confidence range [ 0.4 - 0.5 ]: 2 partially correct answers 18.2 % 	| Total Percantage so far 81.8 %
+In confidence range [ 0.5 - 0.6 ]: 0 partially correct answers 0.0 % 	| Total Percantage so far 81.8 %
+In confidence range [ 0.6 - 0.7 ]: 0 partially correct answers 0.0 % 	| Total Percantage so far 81.8 %
+In confidence range [ 0.7 - 0.8 ]: 0 partially correct answers 0.0 % 	| Total Percantage so far 81.8 %
+In confidence range [ 0.8 - 0.9 ]: 0 partially correct answers 0.0 % 	| Total Percantage so far 81.8 %
+In confidence range [ 0.9 - 1.0 ]: 2 partially correct answers 18.2 % 	| Total Percantage so far 100.0 %
+-------------------------------------------------------------------------------------------------
+
+
+
+For  deepset/minilm-uncased-squad2 :
+-------------------------------------------------------------------------------------------------
+For correct answers:{ Average: 0.672, Median: 0.781}
+For wrong answers:{ Average: 0.296, Median: 0.238}
+For partially correct answers:{ Average: 0.490, Median: 0.529}
+-------------------------------------------------------------------------------------------------
+In confidence range [ 0.0 - 0.1 ]: 3 correct answers 2.0 % 	| Total Percantage so far 2.0 %
+In confidence range [ 0.1 - 0.2 ]: 9 correct answers 6.0 % 	| Total Percantage so far 8.0 %
+In confidence range [ 0.2 - 0.3 ]: 8 correct answers 5.3 % 	| Total Percantage so far 13.3 %
+In confidence range [ 0.3 - 0.4 ]: 10 correct answers 6.7 % 	| Total Percantage so far 20.0 %
+In confidence range [ 0.4 - 0.5 ]: 16 correct answers 10.7 % 	| Total Percantage so far 30.7 %
+In confidence range [ 0.5 - 0.6 ]: 7 correct answers 4.7 % 	| Total Percantage so far 35.3 %
+In confidence range [ 0.6 - 0.7 ]: 16 correct answers 10.7 % 	| Total Percantage so far 46.0 %
+In confidence range [ 0.7 - 0.8 ]: 8 correct answers 5.3 % 	| Total Percantage so far 51.3 %
+In confidence range [ 0.8 - 0.9 ]: 29 correct answers 19.3 % 	| Total Percantage so far 70.7 %
+In confidence range [ 0.9 - 1.0 ]: 44 correct answers 29.3 % 	| Total Percantage so far 100.0 %
+-------------------------------------------------------------------------------------------------
+In confidence range [ 0.0 - 0.1 ]: 11 wrong answers 26.2 % 	| Total Percantage so far 26.2 %
+In confidence range [ 0.1 - 0.2 ]: 6 wrong answers 14.3 % 	| Total Percantage so far 40.5 %
+In confidence range [ 0.2 - 0.3 ]: 8 wrong answers 19.0 % 	| Total Percantage so far 59.5 %
+In confidence range [ 0.3 - 0.4 ]: 4 wrong answers 9.5 % 	| Total Percantage so far 69.0 %
+In confidence range [ 0.4 - 0.5 ]: 5 wrong answers 11.9 % 	| Total Percantage so far 81.0 %
+In confidence range [ 0.5 - 0.6 ]: 1 wrong answers 2.4 % 	| Total Percantage so far 83.3 %
+In confidence range [ 0.6 - 0.7 ]: 2 wrong answers 4.8 % 	| Total Percantage so far 88.1 %
+In confidence range [ 0.7 - 0.8 ]: 2 wrong answers 4.8 % 	| Total Percantage so far 92.9 %
+In confidence range [ 0.8 - 0.9 ]: 3 wrong answers 7.1 % 	| Total Percantage so far 100.0 %
+In confidence range [ 0.9 - 1.0 ]: 0 wrong answers 0.0 % 	| Total Percantage so far 100.0 %
+-------------------------------------------------------------------------------------------------
+In confidence range [ 0.0 - 0.1 ]: 0 partially correct answers 0.0 % 	| Total Percantage so far 0.0 %
+In confidence range [ 0.1 - 0.2 ]: 1 partially correct answers 12.5 % 	| Total Percantage so far 12.5 %
+In confidence range [ 0.2 - 0.3 ]: 2 partially correct answers 25.0 % 	| Total Percantage so far 37.5 %
+In confidence range [ 0.3 - 0.4 ]: 0 partially correct answers 0.0 % 	| Total Percantage so far 37.5 %
+In confidence range [ 0.4 - 0.5 ]: 1 partially correct answers 12.5 % 	| Total Percantage so far 50.0 %
+In confidence range [ 0.5 - 0.6 ]: 1 partially correct answers 12.5 % 	| Total Percantage so far 62.5 %
+In confidence range [ 0.6 - 0.7 ]: 1 partially correct answers 12.5 % 	| Total Percantage so far 75.0 %
+In confidence range [ 0.7 - 0.8 ]: 1 partially correct answers 12.5 % 	| Total Percantage so far 87.5 %
+In confidence range [ 0.8 - 0.9 ]: 1 partially correct answers 12.5 % 	| Total Percantage so far 100.0 %
+In confidence range [ 0.9 - 1.0 ]: 0 partially correct answers 0.0 % 	| Total Percantage so far 100.0 %
+-------------------------------------------------------------------------------------------------
+
+
+
+For  dmis-lab/biobert-large-cased-v1.1-squad :
+-------------------------------------------------------------------------------------------------
+For correct answers:{ Average: 0.762, Median: 0.857}
+For wrong answers:{ Average: 0.421, Median: 0.467}
+For partially correct answers:{ Average: 0.501, Median: 0.452}
+-------------------------------------------------------------------------------------------------
+In confidence range [ 0.0 - 0.1 ]: 0 correct answers 0.0 % 	| Total Percantage so far 0.0 %
+In confidence range [ 0.1 - 0.2 ]: 2 correct answers 1.3 % 	| Total Percantage so far 1.3 %
+In confidence range [ 0.2 - 0.3 ]: 7 correct answers 4.4 % 	| Total Percantage so far 5.7 %
+In confidence range [ 0.3 - 0.4 ]: 8 correct answers 5.1 % 	| Total Percantage so far 10.8 %
+In confidence range [ 0.4 - 0.5 ]: 12 correct answers 7.6 % 	| Total Percantage so far 18.4 %
+In confidence range [ 0.5 - 0.6 ]: 13 correct answers 8.2 % 	| Total Percantage so far 26.6 %
+In confidence range [ 0.6 - 0.7 ]: 13 correct answers 8.2 % 	| Total Percantage so far 34.8 %
+In confidence range [ 0.7 - 0.8 ]: 10 correct answers 6.3 % 	| Total Percantage so far 41.1 %
+In confidence range [ 0.8 - 0.9 ]: 24 correct answers 15.2 % 	| Total Percantage so far 56.3 %
+In confidence range [ 0.9 - 1.0 ]: 69 correct answers 43.7 % 	| Total Percantage so far 100.0 %
+-------------------------------------------------------------------------------------------------
+In confidence range [ 0.0 - 0.1 ]: 4 wrong answers 12.9 % 	| Total Percantage so far 12.9 %
+In confidence range [ 0.1 - 0.2 ]: 2 wrong answers 6.5 % 	| Total Percantage so far 19.4 %
+In confidence range [ 0.2 - 0.3 ]: 6 wrong answers 19.4 % 	| Total Percantage so far 38.7 %
+In confidence range [ 0.3 - 0.4 ]: 3 wrong answers 9.7 % 	| Total Percantage so far 48.4 %
+In confidence range [ 0.4 - 0.5 ]: 4 wrong answers 12.9 % 	| Total Percantage so far 61.3 %
+In confidence range [ 0.5 - 0.6 ]: 6 wrong answers 19.4 % 	| Total Percantage so far 80.6 %
+In confidence range [ 0.6 - 0.7 ]: 2 wrong answers 6.5 % 	| Total Percantage so far 87.1 %
+In confidence range [ 0.7 - 0.8 ]: 2 wrong answers 6.5 % 	| Total Percantage so far 93.5 %
+In confidence range [ 0.8 - 0.9 ]: 2 wrong answers 6.5 % 	| Total Percantage so far 100.0 %
+In confidence range [ 0.9 - 1.0 ]: 0 wrong answers 0.0 % 	| Total Percantage so far 100.0 %
+-------------------------------------------------------------------------------------------------
+In confidence range [ 0.0 - 0.1 ]: 0 partially correct answers 0.0 % 	| Total Percantage so far 0.0 %
+In confidence range [ 0.1 - 0.2 ]: 1 partially correct answers 9.1 % 	| Total Percantage so far 9.1 %
+In confidence range [ 0.2 - 0.3 ]: 1 partially correct answers 9.1 % 	| Total Percantage so far 18.2 %
+In confidence range [ 0.3 - 0.4 ]: 2 partially correct answers 18.2 % 	| Total Percantage so far 36.4 %
+In confidence range [ 0.4 - 0.5 ]: 4 partially correct answers 36.4 % 	| Total Percantage so far 72.7 %
+In confidence range [ 0.5 - 0.6 ]: 1 partially correct answers 9.1 % 	| Total Percantage so far 81.8 %
+In confidence range [ 0.6 - 0.7 ]: 0 partially correct answers 0.0 % 	| Total Percantage so far 81.8 %
+In confidence range [ 0.7 - 0.8 ]: 0 partially correct answers 0.0 % 	| Total Percantage so far 81.8 %
+In confidence range [ 0.8 - 0.9 ]: 0 partially correct answers 0.0 % 	| Total Percantage so far 81.8 %
+In confidence range [ 0.9 - 1.0 ]: 2 partially correct answers 18.2 % 	| Total Percantage so far 100.0 %
+-------------------------------------------------------------------------------------------------
+
+
+
+For  deepset/bert-base-cased-squad2 :
+-------------------------------------------------------------------------------------------------
+For correct answers:{ Average: 0.561, Median: 0.635}
+For wrong answers:{ Average: 0.214, Median: 0.087}
+For partially correct answers:{ Average: 0.489, Median: 0.473}
+-------------------------------------------------------------------------------------------------
+In confidence range [ 0.0 - 0.1 ]: 24 correct answers 16.7 % 	| Total Percantage so far 16.7 %
+In confidence range [ 0.1 - 0.2 ]: 9 correct answers 6.2 % 	| Total Percantage so far 22.9 %
+In confidence range [ 0.2 - 0.3 ]: 10 correct answers 6.9 % 	| Total Percantage so far 29.9 %
+In confidence range [ 0.3 - 0.4 ]: 4 correct answers 2.8 % 	| Total Percantage so far 32.6 %
+In confidence range [ 0.4 - 0.5 ]: 7 correct answers 4.9 % 	| Total Percantage so far 37.5 %
+In confidence range [ 0.5 - 0.6 ]: 16 correct answers 11.1 % 	| Total Percantage so far 48.6 %
+In confidence range [ 0.6 - 0.7 ]: 11 correct answers 7.6 % 	| Total Percantage so far 56.2 %
+In confidence range [ 0.7 - 0.8 ]: 17 correct answers 11.8 % 	| Total Percantage so far 68.1 %
+In confidence range [ 0.8 - 0.9 ]: 13 correct answers 9.0 % 	| Total Percantage so far 77.1 %
+In confidence range [ 0.9 - 1.0 ]: 33 correct answers 22.9 % 	| Total Percantage so far 100.0 %
+-------------------------------------------------------------------------------------------------
+In confidence range [ 0.0 - 0.1 ]: 26 wrong answers 54.2 % 	| Total Percantage so far 54.2 %
+In confidence range [ 0.1 - 0.2 ]: 8 wrong answers 16.7 % 	| Total Percantage so far 70.8 %
+In confidence range [ 0.2 - 0.3 ]: 0 wrong answers 0.0 % 	| Total Percantage so far 70.8 %
+In confidence range [ 0.3 - 0.4 ]: 2 wrong answers 4.2 % 	| Total Percantage so far 75.0 %
+In confidence range [ 0.4 - 0.5 ]: 2 wrong answers 4.2 % 	| Total Percantage so far 79.2 %
+In confidence range [ 0.5 - 0.6 ]: 3 wrong answers 6.2 % 	| Total Percantage so far 85.4 %
+In confidence range [ 0.6 - 0.7 ]: 3 wrong answers 6.2 % 	| Total Percantage so far 91.7 %
+In confidence range [ 0.7 - 0.8 ]: 2 wrong answers 4.2 % 	| Total Percantage so far 95.8 %
+In confidence range [ 0.8 - 0.9 ]: 1 wrong answers 2.1 % 	| Total Percantage so far 97.9 %
+In confidence range [ 0.9 - 1.0 ]: 1 wrong answers 2.1 % 	| Total Percantage so far 100.0 %
+-------------------------------------------------------------------------------------------------
+In confidence range [ 0.0 - 0.1 ]: 0 partially correct answers 0.0 % 	| Total Percantage so far 0.0 %
+In confidence range [ 0.1 - 0.2 ]: 0 partially correct answers 0.0 % 	| Total Percantage so far 0.0 %
+In confidence range [ 0.2 - 0.3 ]: 1 partially correct answers 12.5 % 	| Total Percantage so far 12.5 %
+In confidence range [ 0.3 - 0.4 ]: 2 partially correct answers 25.0 % 	| Total Percantage so far 37.5 %
+In confidence range [ 0.4 - 0.5 ]: 1 partially correct answers 12.5 % 	| Total Percantage so far 50.0 %
+In confidence range [ 0.5 - 0.6 ]: 1 partially correct answers 12.5 % 	| Total Percantage so far 62.5 %
+In confidence range [ 0.6 - 0.7 ]: 2 partially correct answers 25.0 % 	| Total Percantage so far 87.5 %
+In confidence range [ 0.7 - 0.8 ]: 0 partially correct answers 0.0 % 	| Total Percantage so far 87.5 %
+In confidence range [ 0.8 - 0.9 ]: 1 partially correct answers 12.5 % 	| Total Percantage so far 100.0 %
+In confidence range [ 0.9 - 1.0 ]: 0 partially correct answers 0.0 % 	| Total Percantage so far 100.0 %
+-------------------------------------------------------------------------------------------------
+
+
+
+For  bert-large-cased-whole-word-masking-finetuned-squad :
+-------------------------------------------------------------------------------------------------
+For correct answers:{ Average: 0.733, Median: 0.828}
+For wrong answers:{ Average: 0.379, Median: 0.374}
+For partially correct answers:{ Average: 0.585, Median: 0.569}
+-------------------------------------------------------------------------------------------------
+In confidence range [ 0.0 - 0.1 ]: 2 correct answers 1.2 % 	| Total Percantage so far 1.2 %
+In confidence range [ 0.1 - 0.2 ]: 3 correct answers 1.9 % 	| Total Percantage so far 3.1 %
+In confidence range [ 0.2 - 0.3 ]: 6 correct answers 3.7 % 	| Total Percantage so far 6.8 %
+In confidence range [ 0.3 - 0.4 ]: 10 correct answers 6.2 % 	| Total Percantage so far 13.0 %
+In confidence range [ 0.4 - 0.5 ]: 13 correct answers 8.1 % 	| Total Percantage so far 21.1 %
+In confidence range [ 0.5 - 0.6 ]: 15 correct answers 9.3 % 	| Total Percantage so far 30.4 %
+In confidence range [ 0.6 - 0.7 ]: 14 correct answers 8.7 % 	| Total Percantage so far 39.1 %
+In confidence range [ 0.7 - 0.8 ]: 15 correct answers 9.3 % 	| Total Percantage so far 48.4 %
+In confidence range [ 0.8 - 0.9 ]: 23 correct answers 14.3 % 	| Total Percantage so far 62.7 %
+In confidence range [ 0.9 - 1.0 ]: 60 correct answers 37.3 % 	| Total Percantage so far 100.0 %
+-------------------------------------------------------------------------------------------------
+In confidence range [ 0.0 - 0.1 ]: 2 wrong answers 6.7 % 	| Total Percantage so far 6.7 %
+In confidence range [ 0.1 - 0.2 ]: 6 wrong answers 20.0 % 	| Total Percantage so far 26.7 %
+In confidence range [ 0.2 - 0.3 ]: 5 wrong answers 16.7 % 	| Total Percantage so far 43.3 %
+In confidence range [ 0.3 - 0.4 ]: 2 wrong answers 6.7 % 	| Total Percantage so far 50.0 %
+In confidence range [ 0.4 - 0.5 ]: 5 wrong answers 16.7 % 	| Total Percantage so far 66.7 %
+In confidence range [ 0.5 - 0.6 ]: 6 wrong answers 20.0 % 	| Total Percantage so far 86.7 %
+In confidence range [ 0.6 - 0.7 ]: 2 wrong answers 6.7 % 	| Total Percantage so far 93.3 %
+In confidence range [ 0.7 - 0.8 ]: 1 wrong answers 3.3 % 	| Total Percantage so far 96.7 %
+In confidence range [ 0.8 - 0.9 ]: 1 wrong answers 3.3 % 	| Total Percantage so far 100.0 %
+In confidence range [ 0.9 - 1.0 ]: 0 wrong answers 0.0 % 	| Total Percantage so far 100.0 %
+-------------------------------------------------------------------------------------------------
+In confidence range [ 0.0 - 0.1 ]: 0 partially correct answers 0.0 % 	| Total Percantage so far 0.0 %
+In confidence range [ 0.1 - 0.2 ]: 0 partially correct answers 0.0 % 	| Total Percantage so far 0.0 %
+In confidence range [ 0.2 - 0.3 ]: 2 partially correct answers 22.2 % 	| Total Percantage so far 22.2 %
+In confidence range [ 0.3 - 0.4 ]: 0 partially correct answers 0.0 % 	| Total Percantage so far 22.2 %
+In confidence range [ 0.4 - 0.5 ]: 2 partially correct answers 22.2 % 	| Total Percantage so far 44.4 %
+In confidence range [ 0.5 - 0.6 ]: 2 partially correct answers 22.2 % 	| Total Percantage so far 66.7 %
+In confidence range [ 0.6 - 0.7 ]: 0 partially correct answers 0.0 % 	| Total Percantage so far 66.7 %
+In confidence range [ 0.7 - 0.8 ]: 1 partially correct answers 11.1 % 	| Total Percantage so far 77.8 %
+In confidence range [ 0.8 - 0.9 ]: 0 partially correct answers 0.0 % 	| Total Percantage so far 77.8 %
+In confidence range [ 0.9 - 1.0 ]: 2 partially correct answers 22.2 % 	| Total Percantage so far 100.0 %
+-------------------------------------------------------------------------------------------------
+
+
+

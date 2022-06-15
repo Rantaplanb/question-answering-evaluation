@@ -3,6 +3,12 @@ import numpy as np
 from matplotlib import pyplot as plt
 from functools import cmp_to_key
 import statistics
+from fpdf import FPDF
+from fpdf import FPDF
+from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
+from matplotlib.figure import Figure
+import numpy as np
+from PIL import Image
 
 our_context_count = 20
 xsquad_context_count = 118
@@ -14,13 +20,13 @@ questions_per_context = 10
 model_count = 10
 
 def get_data(translator):
-    return pd.read_csv('../../resources/csv_files/questions_with_answers_from_all_models_on_our_collection_' + translator + '.csv', encoding='utf16')
-    # return pd.read_csv('../../resources/csv_files/questions_with_answers_from_all_models_on_xsquad_bing_with_is_correct.csv', encoding='utf16')
+    # return pd.read_csv('../../resources/csv_files/questions_with_answers_from_all_models_on_our_collection_' + translator + '.csv', encoding='utf16')
+    return pd.read_csv('../../3.BERT_model_answer_labeling/output_data/QnA_on_xquad_with_helsinki_auto_labeled.csv', encoding='utf16')
 
 data = get_data(translator)
-is_correct_col = data['is_correct']
+is_correct_col = data['is_correct (labeled by machine)']
 questions_col = data['question']
-scores_col = data['score']
+scores_col = data['confidence_score']
 models_col = data['model']
 
 models = [
@@ -78,14 +84,33 @@ def compare_model_results(res1, res2):
 
 def print_model_statistics(model_results):
     model_results.sort(key=cmp_to_key(compare_model_results))
-    
+    headers = ['Models', 'Correct', 'Partially Correct', 'Wrong']
+    pdf = FPDF()
+    pdf.add_page()
+    pdf.set_font("Times", size=10)
+    pdf.set_font(style="BI")
+    line_height = pdf.font_size * 4
+    col_width = pdf.epw / 6  # distribute content evenly
+    for header in headers:
+        pdf.multi_cell(col_width, line_height, header, border=1,
+            new_x="RIGHT", new_y="TOP", max_line_height=pdf.font_size)
+
+    pdf.ln(line_height)
+
     for result in model_results:
-        print('For model', result['model'], ':')
-        print('Correct:', result['yes'])
-        print('Partially correct:', result['partially'])
-        print('Wrong:', result['no'])
-        print('Percentage:', "{:.2f}".format((result['yes'] + float(result['partially'])/2) / (result['yes'] + result['partially'] + result['no'])*100), '%')
-        print('---------------------------------------------------')
+        for k, v in result.items():
+            if v == 'helsinki':
+                continue
+            pdf.multi_cell(col_width, line_height, str(v), border=1,
+                new_x="RIGHT", new_y="TOP", max_line_height=pdf.font_size)
+        pdf.ln(line_height)
+    pdf.output("tuto1.pdf")
+        # print('For model', result['model'], ':')
+        # print('Correct:', result['yes'])
+        # print('Partially correct:', result['partially'])
+        # print('Wrong:', result['no'])
+        # print('Percentage:', "{:.2f}".format((result['yes'] + float(result['partially'])/2) / (result['yes'] + result['partially'] + result['no'])*100), '%')
+        # print('---------------------------------------------------')
 
 def compare_question_results(ques1, ques2):
     score1 = ques1['yes'] + float(ques1['partially']) / 2
@@ -202,7 +227,17 @@ def plot_confidence_score_with_evaluation(model):
     plt.title(model)
     plt.xlabel("Is Correct")
     plt.ylabel("Confidence Score")
-    plt.show()
+    # plt.show()
+    canvas = FigureCanvas(plt)
+    canvas.draw()
+    img = Image.fromarray(np.asarray(canvas.buffer_rgba()))
+
+    pdf = FPDF()
+    pdf.add_page()
+    pdf.image(img, w=pdf.epw)  # Make the image full width
+    pdf.output("matplotlib.pdf")
+
+
 
 def print_ranges(conf_scores, answer):
     step = 0.1 
@@ -255,16 +290,16 @@ if __name__ == "__main__":
         model_results.append(get_model_results(models[i]))
     invalid_count = model_results[-1]['invalid'] * 10
     print_model_statistics(model_results)
+    plot_confidence_score_with_evaluation(models[0])
+    # question_results = []
+    # for i in range(total_contexts):
+    #     for j in range(questions_per_context):
+    #         question_results.append(get_question_results(i, j))
+    # print_question_statistics(question_results)
 
-    question_results = []
-    for i in range(total_contexts):
-        for j in range(questions_per_context):
-            question_results.append(get_question_results(i, j))
-    print_question_statistics(question_results)
-
-    for model in models:
-        print_confidence_statistics(model)
-        #plot_confidence_score_with_evaluation(model)
-        print()
-        print()
-        print()
+    # for model in models:
+    #     print_confidence_statistics(model)
+    #     #plot_confidence_score_with_evaluation(model)
+    #     print()
+    #     print()
+    #     print()

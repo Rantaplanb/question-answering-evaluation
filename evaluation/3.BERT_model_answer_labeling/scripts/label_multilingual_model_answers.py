@@ -58,7 +58,7 @@ if __name__ == '__main__':
 
     data = get_input_data(input_dir + input_filename)
     thresholds = select_thresholds()
-    labels = scores_to_labels(data['total_score'], thresholds[0], thresholds[1])
+    labels = scores_to_labels(data['sentence_transformer_score'], thresholds[0], thresholds[1])
     data['is_correct (labeled by machine)'] = labels
 
     write_data_to_csv(data, output_filename)
