@@ -316,4 +316,4 @@ if __name__ == '__main__':
     write_conf_score_graphs(data['conf_scores'], data['models'], data['labels'], pdf)
     write_question_statistics(mapped_questions, extra_statistics, pdf)
 
-    pdf.output('statistics.pdf')
+    pdf.output('../output_data/statistics_for_' + input_filename[:-4]  + '.pdf')
