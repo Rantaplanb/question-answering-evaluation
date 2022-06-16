@@ -1,5 +1,16 @@
 #!/bin/bash
 
+# Defines
+blk='\033[01;30m'   # Black
+red='\033[01;31m'   # Red
+grn='\033[01;32m'   # Green
+ylw='\033[01;33m'   # Yellow
+blu='\033[01;34m'   # Blue
+pur='\033[01;35m'   # Purple
+cyn='\033[01;36m'   # Cyan
+wht='\033[01;37m'   # White
+clr='\033[00m'      # Reset
+
 # Set of Models to be evaluated
 # Please insert the name of the model you want to use as an element of the array.
 models=(
@@ -31,3 +42,13 @@ f1='0.2'
 # Those thresholds have been set automatically and it is not advised to change them.
 t1='0.65'
 t2='0.5'
+
+# Functions
+model_array_to_model_string() {
+    formated_string=''
+    counter=1
+    for str in ${models[@]}; do
+        formated_string="${formated_string} -m${counter} ${str}"
+        counter=$((counter + 1))
+    done
+}

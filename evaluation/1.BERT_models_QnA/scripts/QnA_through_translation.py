@@ -17,7 +17,7 @@ def get_dataset(filename):
         f = open('../../../resources/json_files/' + filename, encoding='utf-16')
         return json.load(f)["collection"]
     elif filename == 'demo_QnA_dataset.json':
-        f = open('../../../resources/json_files/' + filename, encoding='utf-16')
+        f = open('../../../resources/json_files/' + filename, encoding='UTF8')
         return json.load(f)["collection"]
     elif filename == 'squad_QnA_dataset.json':
         f = open('../../../resources/json_files/' + filename, encoding='UTF8')
@@ -43,7 +43,7 @@ def select_input_file(input_dir_path):
     else:
         print('Invalid input, expected number in range of (0 - ' + str(len(input_files)) + ')')
         print('Terminating ...')
-        exit(0)
+        exit(-1)
 
 def select_translator():
     if '-trans' in sys.argv:
@@ -55,7 +55,7 @@ def select_translator():
     else:
         print('Invalid input, expected number in range of (0 - 2)')
         print('Terminating ...')
-        exit(0)
+        exit(-1)
 
 def select_models():
     if '--models' in sys.argv:
@@ -135,8 +135,8 @@ def QnA_on_xquad(dataset, output_file, models):
                         writer.writerow(result_rows[j])
 
 
-def QnA_on_demo_dataset(dataset, output_file):
-    QnA_on_custom_dataset(dataset, output_file)
+def QnA_on_demo_dataset(dataset, output_file, models):
+    QnA_on_custom_dataset(dataset, output_file, models)
 
 """
 ---Script Configuration---
