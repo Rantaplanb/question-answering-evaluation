@@ -196,7 +196,7 @@ def write_questions(questions, output_message, extra, pdf):
     else:
         pdf.ln(6)
 
-def write_question_statistics(mapped_questions, extra_statistics, pdf):
+def write_question_statistics(mapped_questions, extra_statistics, models, pdf):
     fully_correct = []
     fully_wrong = []
     at_least_one_correct = []
@@ -205,9 +205,9 @@ def write_question_statistics(mapped_questions, extra_statistics, pdf):
 
     for question in mapped_questions:
         cur_question = question['question']
-        if question['yes'] == 10:
+        if question['yes'] == len(models):
             fully_correct.append(cur_question)
-        elif question['no'] == 10:
+        elif question['no'] == len(models):
             fully_wrong.append(cur_question)
         
         if question['yes'] > 0:
@@ -308,12 +308,10 @@ if __name__ == '__main__':
     mapped_models = map_models_with_labels(data['models'], data['labels'])
     mapped_questions = map_questions_with_labels(data['questions'], data['labels'], len(data['models']))
 
-
-
     pdf = init_pdf()
     write_model_statistics_table(mapped_models, pdf)
     write_model_response_times(input_filename.replace('_auto_labeled', ''), data['models'], pdf)
     write_conf_score_graphs(data['conf_scores'], data['models'], data['labels'], pdf)
-    write_question_statistics(mapped_questions, extra_statistics, pdf)
+    write_question_statistics(mapped_questions, extra_statistics, data['models'], pdf)
 
     pdf.output('../output_data/statistics_for_' + input_filename[:-4]  + '.pdf')

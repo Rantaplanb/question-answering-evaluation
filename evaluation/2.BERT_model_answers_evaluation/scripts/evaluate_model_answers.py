@@ -24,7 +24,7 @@ def select_input_file(input_dir_path):
     else:
         print('Invalid input, expected number in range of (0 - ' + str(len(input_files)) + ')')
         print('Terminating ...')
-        exit(0)
+        exit(-1)
 
 
 def get_QnA_results(filepath):
@@ -45,9 +45,11 @@ def get_output_filename(input_filename):
         return 'evaluated_answers_on_custom_dataset_with_' + input_filename[input_filename.index('with_') + 5 : - 4] + '.csv'        
     elif 'xquad' in input_filename:
         return 'evaluated_answers_on_xquad_with_' + input_filename[input_filename.index('with_') + 5 : - 4] + '.csv'
+    elif 'demo' in input_filename:
+        return 'evaluated_answers_on_demo_dataset_with_' + input_filename[input_filename.index('with_') + 5 : - 4] + '.csv'
     else:
         print("No man's land.")
-        exit(0)
+        exit(-1)
 
 
 def format_answer(answer):
@@ -55,7 +57,11 @@ def format_answer(answer):
                  .replace('\"', '').replace('-', '').replace('%', '').replace(':', '')
 
 def calc_nlp_score(correct_answer, model_answer):
-    return float("{:.3f}".format(nlp(model_answer).similarity(nlp(correct_answer))))
+    sys.stderr = open(os.devnull, 'w')
+    res = float("{:.3f}".format(nlp(model_answer).similarity(nlp(correct_answer))))
+    sys.stderr = sys.__stderr__
+    return res
+
 
 def calc_levenshtein_score(correct_answer, model_answer):
     return float("{:.3f}".format(1 - (float(Levenshtein.distance(model_answer, correct_answer)) / (max(len(model_answer), len(correct_answer))))))
@@ -146,7 +152,7 @@ def select_weights():
             else:
                 weights[metric] = float(user_input)
 
-    return weights if check_weights(weights) else exit(1)
+    return weights if check_weights(weights) else exit(-1)
 
 
 def write_headers(filename, headers):

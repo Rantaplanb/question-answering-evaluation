@@ -64,7 +64,8 @@ def select_models():
         while True:
             if '-m' + str(model_count) not in sys.argv:
                 break
-            models.append(sys.argv.index('-m' + str(model_count)) + 1)
+            models.append(sys.argv[sys.argv.index('-m' + str(model_count)) + 1])
+            model_count += 1
         return models
     else:
         return [
@@ -153,9 +154,9 @@ if __name__ == '__main__':
     input_filename = select_input_file(input_dir)
     translator = select_translator()
     models = select_models()
-
+    print(models)
     dataset = get_dataset(input_filename)
-
+    print(dataset)
     if input_filename == 'custom_QnA_dataset.json':
         output_filename = 'QnA_on_custom_dataset_with_' + translator + '.csv'
         QnA_on_custom_dataset(dataset, output_filename, models)

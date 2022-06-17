@@ -43,6 +43,10 @@ f1='0.2'
 t1='0.65'
 t2='0.5'
 
+# When the flag is empty, the normal statistcs are written.
+# If you want extra statistics, change flag's value to '--extra'
+statistics_flag=''
+
 # Functions
 model_array_to_model_string() {
     formated_string=''
