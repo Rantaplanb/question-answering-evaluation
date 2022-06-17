@@ -40,8 +40,8 @@ f1='0.2'
 # The rest answers that were evaluated with a score less than 
 # thresholds 1 and greater than thresholds 2 will be labeled as partially correct.
 # Those thresholds have been set automatically and it is not advised to change them.
-t1='0.65'
-t2='0.5'
+t1='0.57'
+t2='0.55'
 
 # When the flag is empty, the normal statistcs are written.
 # If you want extra statistics, change flag's value to '--extra'

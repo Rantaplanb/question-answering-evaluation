@@ -7,7 +7,7 @@ from fpdf import FPDF
 def init_pdf():
     pdf = FPDF()
     pdf.add_page()
-    pdf.add_font('OpenSans', '', r"../../../resources/fonts/static/OpenSans/OpenSans-Medium.ttf")
+    pdf.add_font('OpenSans', '', r"../../../resources/fonts/static/OpenSans/OpenSans-Regular.ttf")
     pdf.add_font('OpenSans', 'B', r"../../../resources/fonts/static/OpenSans/OpenSans-Bold.ttf")
     pdf.add_font('OpenSans', 'I', r"../../../resources/fonts/static/OpenSans/OpenSans-Italic.ttf")
     pdf.add_font('OpenSans', 'BI', r"../../../resources/fonts/static/OpenSans/OpenSans-BoldItalic.ttf")

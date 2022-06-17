@@ -41,7 +41,7 @@ def create_table_entries(labeled_by_machine, labeled_by_human):
     return [human_labeled_correct_dict, human_labeled_partially_dict, human_labeled_wrong_dict]
 
 def get_threshold_score(dicts):
-    return dicts[0]['yes'] + dicts[1]['partially'] + dicts[2]['no'] / get_total_answers(dicts)
+    return (dicts[0]['yes'] + dicts[1]['partially'] + dicts[2]['no']) / get_total_answers(dicts)
 
 def get_new_machine_labels(input_filename, t1, t2):
     os.system(
@@ -56,6 +56,7 @@ def find_best_thresholds(threshold_scores):
     for item in threshold_scores:
         if item['score'] > max_item['score']:
             max_item = item
+    print('Final thresholds: ', "{:.2f}".format(max_item['t1']), "{:.2f}".format(max_item['t2']), '->', "{:.4f}".format(max_item['score']))
     return max_item['t1'], max_item['t2']
 
 def calculate_thresholds(human_labels, filename_step2):
@@ -68,13 +69,15 @@ def calculate_thresholds(human_labels, filename_step2):
             if t1 > t2:
                 machine_labels = get_new_machine_labels(filename_step2, t1, t2)
                 score = get_threshold_score(create_table_entries(machine_labels, human_labels))
-                print('Appending' + score)
+                print('Appending: ' + "{:.4f}".format(score) + ', t1: ' + "{:.2f}".format(t1) + ', t2: ' + "{:.2f}".format(t2))
                 threshold_scores.append({'t1': t1, 't2': t2, 'score': score})
             t1 += step
         t1 = 0
         t2 += step
     return find_best_thresholds(threshold_scores)
 
+def get_total_dict_answers(human_labeled_dict):
+    return human_labeled_dict['yes'] + human_labeled_dict['partially'] + human_labeled_dict['no']
 
 def print_result_table(correct_dict, partially_dict, wrong_dict):
     print('---------------------------------------------------------------------------------------------------------------------')
@@ -82,13 +85,12 @@ def print_result_table(correct_dict, partially_dict, wrong_dict):
         .format('| Human Labeling', 'Machine Labeled Yes', 'Machine Labeled Partially', 'Machine Labeled No', 'Total'), '|')
     print('|-------------------------------------------------------------------------------------------------------------------|')
     print('{:<25}  {:<25}  {:<25}  {:<25}  {:<7}'\
-        .format('| Yes', correct_dict['yes'], correct_dict['partially'], correct_dict['no'], get_total_answers(correct_dict)), '|')
+        .format('| Yes', correct_dict['yes'], correct_dict['partially'], correct_dict['no'], get_total_dict_answers(correct_dict)), '|')
     print('{:<25}  {:<25}  {:<25}  {:<25}  {:<7}'\
-        .format('| Partially', partially_dict['yes'], partially_dict['partially'], partially_dict['no'], get_total_answers(partially_dict)), '|')
+        .format('| Partially', partially_dict['yes'], partially_dict['partially'], partially_dict['no'], get_total_dict_answers(partially_dict)), '|')
     print('{:<25}  {:<25}  {:<25}  {:<25}  {:<7}'\
-        .format('| No', wrong_dict['yes'], wrong_dict['partially'], wrong_dict['no'], get_total_answers(wrong_dict)), '|')
+        .format('| No', wrong_dict['yes'], wrong_dict['partially'], wrong_dict['no'], get_total_dict_answers(wrong_dict)), '|')
     print('---------------------------------------------------------------------------------------------------------------------')
-
 
 if __name__ == '__main__':
     input_dir = './QnA_fully_labeled/'
@@ -97,5 +99,6 @@ if __name__ == '__main__':
     human_labels = get_input_data(input_dir + input_filename)
 
     t1, t2 = calculate_thresholds(human_labels, filename_step2)
-
-    print('Final thresholds: ', t1, t2)
+    machine_labels = get_new_machine_labels(filename_step2, t1, t2)
+    table = create_table_entries(machine_labels, human_labels)
+    print_result_table(table[0], table[1], table[2])
