@@ -228,18 +228,19 @@ def write_question_statistics(mapped_questions, extra_statistics, models, pdf):
     write_questions(correct_or_partially, 'correctly or partially correct by all models', extra_statistics, pdf)
 
 
-def get_ranges(conf_scores, models):
+def get_ranges(conf_scores):
     step = 0.1 
     j = 0
-    percentage_counter = 0
     results = []
     for i in range(10):
         counter = 0
         while(j < len(conf_scores) and step >= conf_scores[j]):
             j += 1
             counter += 1
-        percentage_counter += counter
-        results.append([str(counter), '{:.1f}'.format(counter / len(conf_scores) * 100), '%'])
+        if len(conf_scores) == 0:
+            results.append(['0', '0'])
+        else:
+            results.append([str(counter), '{:.1f}'.format(counter / len(conf_scores) * 100)])
         step += 0.1
     return results
 
@@ -274,9 +275,9 @@ def write_conf_score_graphs(conf_scores, models, labels, pdf):
             pdf.multi_cell(45, 6, header, 1, align='C', new_x='RIGHT', new_y='TOP')
         pdf.ln(6)
 
-        correct_ranges = get_ranges(model_conf_scores[i]['yes'], models)
-        partially_ranges = get_ranges(model_conf_scores[i]['partially'], models)
-        wrong_ranges = get_ranges(model_conf_scores[i]['no'], models)
+        correct_ranges = get_ranges(model_conf_scores[i]['yes'])
+        partially_ranges = get_ranges(model_conf_scores[i]['partially'])
+        wrong_ranges = get_ranges(model_conf_scores[i]['no'])
 
         step = 0.1
         for row in range(10):
