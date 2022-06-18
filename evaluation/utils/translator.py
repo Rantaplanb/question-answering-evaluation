@@ -1,8 +1,8 @@
-from googletrans import Translator
+# from googletrans import Translator
 import translators as ts
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM,pipeline
-import goslate
-from textblob import TextBlob
+# import goslate
+# from textblob import TextBlob
 from utils.text_splitter import split_to_sentences, split_text
 import time
 
