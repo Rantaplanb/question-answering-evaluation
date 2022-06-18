@@ -15,7 +15,6 @@ clr='\033[00m'      # Reset
 # Please insert the name of the model you want to use as an element of the array.
 models=(
     "deepset/roberta-base-squad2"
-    "deepset/roberta-base-squad2-covid"
 )
 
 # Dataset that will be used to evaluate the models above.
@@ -26,11 +25,13 @@ translator='helsinki'
 
 # Weights for the evaluation of the model answers
 # The weights must add up to 1 
-nlp='0.2'
-levenshtein='0.1'
-substring='0.1'
-sentence_transformer='0.4'
-f1='0.2'
+nlp='0'
+levenshtein='0'
+substring='0'
+sentence_transformer='1'
+sentence_transformer_gr='0'
+f1='0'
+f1_gr='0'
 
 # Thresholds for the labeling
 # The first threshold indicates that answers evaluated with a

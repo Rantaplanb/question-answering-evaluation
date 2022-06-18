@@ -33,15 +33,15 @@ model_array_to_model_string
 echo "Putting the models to work..."
 echo "Depending on the number of models and the size of the dataset, "
 echo "this process could last very long, so go grab a snack!"
-if 
-python QnA_through_translation.py -input "$dataset" -trans "$translator" --models $formated_string 2> /dev/null &> /dev/null
-then
-    echo -e "\n${grn}Finished question answering proccess with no errors.${clr}"
-else
-    echo -e "\n${red}Finished question answering with errors."
-    echo -e "Terminating...${clr}"
-    exit 0
-fi
+# if 
+# python QnA_through_translation.py -input "$dataset" -trans "$translator" --models $formated_string 2> /dev/null &> /dev/null
+# then
+#     echo -e "\n${grn}Finished question answering proccess with no errors.${clr}"
+# else
+#     echo -e "\n${red}Finished question answering with errors."
+#     echo -e "Terminating...${clr}"
+#     exit 0
+# fi
 
 
 # 2. Evaluate given answers from step (1).
@@ -58,11 +58,13 @@ echo -e "NLP Weight: ${blu}${nlp}${clr}"
 echo -e "Levenshtein Weight: ${blu}${levenshtein}${clr}"
 echo -e "Substring Weight: ${blu}${substring}${clr}"
 echo -e "Sentence Transformer Weight: ${blu}${sentence_transformer}${clr}"
+echo -e "Sentence Transformer Greek Weight: ${blu}${sentence_transformer_gr}${clr}"
 echo -e "F1 Weight: ${blu}${f1}${clr}"
+echo -e "F1 Greek Weight: ${blu}${f1_gr}${clr}"
 
 if 
 python evaluate_model_answers.py -input "$input_file" --weights -nlp "$nlp" -levenshtein "$levenshtein" \
-    -substring "$substring" -sentence_trans "$sentence_transformer" -f1 "$f1" 
+    -substring "$substring" -sentence_trans "$sentence_transformer" -sentence_trans_gr "$sentence_transformer_gr" -f1 "$f1" -f1_gr "$f1_gr"
 then
     echo -e "\n${grn}Finished question evaluation with no errors.${clr}"
 else
@@ -117,4 +119,4 @@ fi
 
 output_pdf="${input_file/.csv/'.pdf'}"
 echo -e "${grn}The automated evaluation process has finished successfully.${clr}"
-echo -e "Model statistics are in ${blu}PROJECT_ROOT/4.BERT_model_statistics/output_data/statistics_for_${input_file}${clr}"
+echo -e "Model statistics are in ${blu}PROJECT_ROOT/4.BERT_model_statistics/output_data/statistics_for_${output_pdf}${clr}"
