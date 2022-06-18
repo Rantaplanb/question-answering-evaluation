@@ -14,7 +14,7 @@ clr='\033[00m'      # Reset
 # Set of Models to be evaluated
 # Please insert the name of the model you want to use as an element of the array.
 models=(
-    "deepset/tinyroberta-squad2"
+    "deepset/roberta-base-squad2"
     "deepset/roberta-base-squad2-covid"
 )
 

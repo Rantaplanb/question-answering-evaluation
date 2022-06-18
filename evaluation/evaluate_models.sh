@@ -46,8 +46,8 @@ fi
 # 2. Evaluate given answers from step (1).
 cd ../../2.BERT_model_answers_evaluation/scripts > /dev/null
 
-input_file="${dataset/_QnA/}"
-input_file="${input_file/.json/}"
+input_file="${dataset/_QnA/''}"
+input_file="${input_file/.json/''}"
 input_file="QnA_on_${input_file}_with_${translator}.csv"
 
 
