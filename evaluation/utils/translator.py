@@ -47,9 +47,6 @@ def helsinki_translate(text, input_lang, output_lang):
         else:
             if sentence not in greek_to_english.keys():
                 greek_to_english[sentence] = translate_sentence_with_helsinki(sentence, input_lang, output_lang)
-                print('Appending to dictionary:', sentence, '->', translated_text)
-            else:
-                print('Using from dictionary: ', sentence, '->', greek_to_english[sentence])
             translated_text += greek_to_english[sentence]
     return translated_text
 
@@ -75,7 +72,7 @@ def request_bing_translation(input, src, dest):
             response = ts.bing(input, from_language=src, to_language=dest)
             return response
         except Exception as e:
-            if(exception_counter > 5):
+            if(exception_counter > 3):
                 nap_time += nap_time
             exception_counter += 1
             exception_total_counter += 1
@@ -86,25 +83,17 @@ def request_bing_translation(input, src, dest):
 
 def bing_translate(input, src='auto', dest='en'):
     result = ''
-    print("Original Text word count: ", len(input))
     if len(input) > 999:
         texts = split_text(input, 999)
         for text in texts:
-            # if text not in greek_to_english.keys():
             translated_text = request_bing_translation(text, src, dest)
             result += translated_text
-            #     print('Appending to dictionary:', text, '->', translated_text)
-            #     greek_to_english[text] = translated_text
-            # else:
-            #     result += greek_to_english[text]
     else:
         if input not in greek_to_english.keys():
             translated_text = request_bing_translation(input, src, dest)
             result = translated_text
-            print('Appending to dictionary:', input, '->', translated_text)
             greek_to_english[input] = translated_text
         else:
-            print('Using from dictionary: ', input, '->', greek_to_english[input])
             result += greek_to_english[input]
     return result
 
