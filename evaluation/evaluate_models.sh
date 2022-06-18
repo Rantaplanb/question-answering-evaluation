@@ -40,6 +40,7 @@ then
 else
     echo -e "\n${red}Finished question answering with errors."
     echo -e "Terminating...${clr}"
+    exit 0
 fi
 
 
@@ -67,6 +68,7 @@ then
 else
     echo -e "\n${red}Finished question evaluation with errors."
     echo -e "Terminating...${clr}"
+    exit 0
 fi
 
 
@@ -87,6 +89,7 @@ then
 else
     echo -e "\n${red}Finished answer labeling with errors."
     echo -e "Terminating...${clr}"
+    exit 0
 fi
 
 
@@ -109,6 +112,7 @@ then
 else
     echo -e "\n${red}Finished statistics generation with errors."
     echo -e "Terminating...${clr}"
+    exit 0
 fi
 
 output_pdf="${input_file/.csv/'.pdf'}"
