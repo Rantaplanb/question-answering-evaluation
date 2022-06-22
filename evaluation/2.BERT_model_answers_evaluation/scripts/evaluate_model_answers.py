@@ -69,11 +69,11 @@ def calc_levenshtein_score(correct_answer, model_answer):
 def calc_substring_score(correct_answer, model_answer):
     return float("{:.3f}".format(SequenceMatcher(None, model_answer, correct_answer).ratio()))
 
-def calc_sentence_transformer_score(correct_answer, model_answer):
+def calc_sentence_transformers_score(correct_answer, model_answer):
     sentence_embeddings = sentence_transformer.encode([model_answer, correct_answer])
     return float("{:.3f}".format(util.pytorch_cos_sim(sentence_embeddings[0], sentence_embeddings[1])[0][0].item()))
 
-def calc_sentence_transformer_gr_score(correct_answer, model_answer):
+def calc_sentence_transformers_gr_score(correct_answer, model_answer):
     sentence_embeddings = sentence_transformer_multilingual.encode([model_answer, correct_answer])
     return float("{:.3f}".format(util.pytorch_cos_sim(sentence_embeddings[0], sentence_embeddings[1])[0][0].item()))
 
@@ -98,8 +98,8 @@ def calculate_scores(correct_answers, model_answers, gr_correct_answers, gr_mode
         'nlp': calc_nlp_score, 
         'levenshtein': calc_levenshtein_score, 
         'substring': calc_substring_score, 
-        'sentence_transformers': calc_sentence_transformer_score, 
-        'sentence_transformers_gr': calc_sentence_transformer_gr_score, 
+        'sentence_transformers': calc_sentence_transformers_score, 
+        'sentence_transformers_gr': calc_sentence_transformers_gr_score, 
         'f1': calc_f1_score,
         'f1_gr': calc_f1_score
         }
@@ -150,7 +150,7 @@ def select_weights():
             'f1_gr': float(sys.argv[sys.argv.index('-f1_gr') + 1])
         }
     else:
-        weights = {'nlp': 0.2, 'levenshtein': 0.1, 'substring': 0.1, 'sentence_transformers': 0.4, 'sentence_transformer_gr': 0, 'f1': 0.2, 'f1_greek': 0}
+        weights = {'nlp': 0.2, 'levenshtein': 0.1, 'substring': 0.1, 'sentence_transformers': 0.4, 'sentence_transformers_gr': 0, 'f1': 0.2, 'f1_gr': 0}
         print('\nTo select a weight for each string comparison metric, enter a number in the range [0, 1].')
         print('The sum of all given weights, must be equal to 1.')
         print('If you want to use the default weights, press enter.\n')
@@ -177,7 +177,7 @@ def write_headers(filename, headers):
 def write_scores(data, scores, filename):
     headers = ['question', 'model', 'gr_correct_answer', 'gr_model_answer', 'en_correct_answer', 
                'en_model_answer', 'confidence_score', 'nlp_score', 'levenshtein_score', 
-               'substring_score', 'sentence_transformer_score', 'sentence_transformer_gr', 'f1_score', 'f1_gr_score', 'total_score']
+               'substring_score', 'sentence_transformers_score', 'sentence_transformers_gr', 'f1_score', 'f1_gr_score', 'total_score']
     write_headers(filename, headers)
                
     with open('../output_data/' + filename, 'a', encoding='UTF16') as file:
