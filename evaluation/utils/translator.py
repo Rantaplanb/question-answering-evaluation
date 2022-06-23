@@ -95,6 +95,10 @@ def bing_translate(input, src='auto', dest='en'):
             greek_to_english[input] = translated_text
         else:
             result += greek_to_english[input]
+        
+        if len(greek_to_english) > 100:
+            greek_to_english.clear()
+    
     return result
 
 # Dictionary of functions
