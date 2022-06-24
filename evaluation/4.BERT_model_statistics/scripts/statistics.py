@@ -66,12 +66,20 @@ def map_models_with_labels(models, labels):
 
 def get_input_data(input_filepath):
     data = pd.read_csv(input_filepath, encoding='UTF-16')
-    return {
-        "models": list(data['model'][:list(data['model'][1:]).index(data['model'][0]) + 1]), # Get models from csv,
-        "labels": list(data['is_correct (labeled by machine)']),
-        "questions": list(data['question']),
-        "conf_scores": list(data['confidence_score'])
-    }
+    if 'bing' not in input_filepath and 'helsinki' not in input_filepath:
+        return {
+            "models": [input_filepath[input_filepath.index('with_') + 5 : input_filepath.index('_auto')]],
+            "labels": list(data['is_correct (labeled by machine)']),
+            "questions": list(data['question']),
+            "conf_scores": list(data['confidence_score'])
+        }
+    else:
+        return {
+            "models": list(data['model'][:list(data['model'][1:]).index(data['model'][0]) + 1]), # Get models from csv,
+            "labels": list(data['is_correct (labeled by machine)']),
+            "questions": list(data['question']),
+            "conf_scores": list(data['confidence_score'])
+        }
 
 
 def write_model_statistics_table(mapped_models, pdf):

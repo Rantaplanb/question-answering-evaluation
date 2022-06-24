@@ -71,15 +71,14 @@ def find_best_thresholds(threshold_scores):
 def calculate_thresholds(human_labels, filename_step2):
     threshold_scores = []
     step = 0.01
-    t1 = 0.00
-    t2 = 0.1
+    t1 = 0.0
+    t2 = 0.0
     while t2 < 1:
         while t1 < 1:
             if t1 > t2:
                 machine_labels = get_new_machine_labels(filename_step2, t1, t2)
                 table_entries = create_table_entries(machine_labels, human_labels)
                 score = get_threshold_score(table_entries)
-                print_result_table(table_entries[0], table_entries[1], table_entries[2])
                 print('Appending: ' + "{:.4f}".format(score) + ', t1: ' + "{:.2f}".format(t1) + ', t2: ' + "{:.2f}".format(t2))
                 threshold_scores.append({'t1': t1, 't2': t2, 'score': score})
             t1 += step
