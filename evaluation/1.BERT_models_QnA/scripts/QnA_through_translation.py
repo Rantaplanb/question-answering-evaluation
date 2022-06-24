@@ -19,7 +19,7 @@ def get_dataset(filename):
     elif filename == 'demo_QnA_dataset.json':
         f = open('../../../resources/json_files/' + filename, encoding='UTF8')
         return json.load(f)["collection"]
-    elif filename == 'squad_QnA_dataset.json':
+    elif filename == 'squad_QnA_dataset_cut.json':
         f = open('../../../resources/json_files/' + filename, encoding='UTF8')
         return json.load(f)["data"]
 
@@ -51,7 +51,7 @@ def select_translator():
     print('The available translators are:\n1) Bing\n2) Helsinki ')
     choice = input('Select translator number: ')
     if choice.isdigit() and int(choice) > 0 and int(choice) <= 2:
-        return 'bing' if choice == 1 else 'helsinki'
+        return 'bing' if int(choice) == 1 else 'helsinki'
     else:
         print('Invalid input, expected number in range of (0 - 2)')
         print('Terminating ...')
@@ -112,7 +112,7 @@ def QnA_on_custom_dataset(dataset, output_file, models):
 
 def QnA_on_xquad(dataset, output_file, models):
     headers = ['question', 'model', 'gr_correct_answer', 'gr_model_answer', 'en_correct_answer', 'en_model_answer', 'model_response_time', 'confidence_score']
-    write_headers(output_file, headers)
+    # write_headers(output_file, headers)
 
     for subject in dataset:
         paragraphs = subject["paragraphs"]
@@ -160,7 +160,7 @@ if __name__ == '__main__':
     if input_filename == 'custom_QnA_dataset.json':
         output_filename = 'QnA_on_custom_dataset_with_' + translator + '.csv'
         QnA_on_custom_dataset(dataset, output_filename, models)
-    elif input_filename == 'squad_QnA_dataset.json':
+    elif input_filename == 'squad_QnA_dataset_cut.json':
         output_filename = 'QnA_on_xquad_with_' + translator + '.csv'
         QnA_on_xquad(dataset, output_filename, models)
     elif input_filename == 'demo_QnA_dataset.json':

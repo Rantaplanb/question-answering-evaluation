@@ -13,6 +13,7 @@ def get_input_data(input_filepath):
     data = pd.read_csv(input_filepath, encoding='UTF-16')
     return list(data['is_correct (labeled by human)'])
 
+
 def get_total_answers(dicts):
     total = 0
     for dict in dicts:
@@ -44,11 +45,19 @@ def get_threshold_score(dicts):
     return (dicts[0]['yes'] + dicts[1]['partially'] + dicts[2]['no']) / get_total_answers(dicts)
 
 def get_new_machine_labels(input_filename, t1, t2):
-    os.system(
-        'cd ../3.BERT_model_answer_labeling/scripts;' + 
-        'python label_model_answers.py -input ' + input_filename + ' --thresholds -t1 ' + str(t1) + ' -t2 ' + str(t2) + ';'
-    )
-    data = pd.read_csv('../3.BERT_model_answer_labeling/output_data/' + input_filename.replace('evaluated_answers', 'QnA').replace('.csv', '_auto_labeled.csv'), encoding='utf16')
+    if 'bing' in input_filename or 'helsinki' in input_filename:
+        os.system(
+            'cd ../3.BERT_model_answer_labeling/scripts;' + 
+            'python label_model_answers.py -input ' + input_filename + ' --thresholds -t1 ' + str(t1) + ' -t2 ' + str(t2) + ';'
+        )
+    else:
+        print('Using multilingual model...')
+        os.system(
+            'cd ../3.BERT_model_answer_labeling/scripts;' + 
+            'python label_multilingual_model_answers.py -input ' + input_filename + ' --thresholds -t1 ' + str(t1) + ' -t2 ' + str(t2) + ';'
+        )
+    data = pd.read_csv('../3.BERT_model_answer_labeling/output_data/' + \
+    input_filename.replace('evaluated_answers', 'QnA').replace('.csv', '_auto_labeled.csv'), encoding='utf16')
     return data['is_correct (labeled by machine)']
 
 def find_best_thresholds(threshold_scores):
@@ -63,12 +72,14 @@ def calculate_thresholds(human_labels, filename_step2):
     threshold_scores = []
     step = 0.01
     t1 = 0.00
-    t2 = 0.0
+    t2 = 0.1
     while t2 < 1:
         while t1 < 1:
             if t1 > t2:
                 machine_labels = get_new_machine_labels(filename_step2, t1, t2)
-                score = get_threshold_score(create_table_entries(machine_labels, human_labels))
+                table_entries = create_table_entries(machine_labels, human_labels)
+                score = get_threshold_score(table_entries)
+                print_result_table(table_entries[0], table_entries[1], table_entries[2])
                 print('Appending: ' + "{:.4f}".format(score) + ', t1: ' + "{:.2f}".format(t1) + ', t2: ' + "{:.2f}".format(t2))
                 threshold_scores.append({'t1': t1, 't2': t2, 'score': score})
             t1 += step
@@ -97,7 +108,7 @@ if __name__ == '__main__':
     input_filename = select_input_file(input_dir)
     filename_step2 = input_filename.replace('QnA', 'evaluated_answers').replace('_fully_labeled', '')
     human_labels = get_input_data(input_dir + input_filename)
-
+    
     t1, t2 = calculate_thresholds(human_labels, filename_step2)
     machine_labels = get_new_machine_labels(filename_step2, t1, t2)
     table = create_table_entries(machine_labels, human_labels)
