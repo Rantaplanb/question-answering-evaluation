@@ -13,7 +13,7 @@ def answer_question(context, question, model):
     return answer, end-start
 
 def get_dataset(filename):
-    if filename == 'custom_QnA_dataset.json':
+    if filename == 'GreekTexts.json':
         f = open('../../../resources/json_files/' + filename, encoding='utf-16')
         return json.load(f)["collection"]
     elif filename == 'demo_QnA_dataset.json':
@@ -157,7 +157,7 @@ if __name__ == '__main__':
     print(models)
     dataset = get_dataset(input_filename)
     print(dataset)
-    if input_filename == 'custom_QnA_dataset.json':
+    if input_filename == 'GreekTexts.json':
         output_filename = 'QnA_on_custom_dataset_with_' + translator + '.csv'
         QnA_on_custom_dataset(dataset, output_filename, models)
     elif input_filename == 'squad_QnA_dataset_cut.json':
