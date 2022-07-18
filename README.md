@@ -16,7 +16,7 @@ It is also worth mentioning that:
 * The output data of the final step, is a .pdf that contains various important statistics, including an approximate percentage of how many questions where answered correctly/partially_correctly/wrongly, average time needed for each answer and more.
 
 
-## Execution environment:
+## Execution environment
 To be able to execute the python scripts, you have to:
 * Install Python3.8 and pip3
 * Create a python virtual environment and activate it
@@ -26,7 +26,8 @@ To be able to execute the python scripts, you have to:
 ## Configuration
 
 In the `$PROJECT_ROOT/evaluation/` directory there is a bash script named `config.sh`. This script contains all the configuration parameters (like BERT model selection) for a fully automated execution of the python script pipeline. Each configuration parameter is briefly explained in the comments contained in the configuration script.
-
+<br />
+Also, in each python script there is a detailed comment above main() function which explains a few more configuration options.
 
 ## Execution
 In the `$PROJECT_ROOT/evaluation/` directory there is another bash script named `evaluate_models.sh`. This script parses the configuration parameters that are set in the `config.sh` script and uses them to execute all the evaluation steps, one by one, which automates the evaluation process. All you have to do, is run this script.
