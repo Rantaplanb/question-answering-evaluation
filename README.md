@@ -27,6 +27,7 @@ To be able to execute the python scripts, you have to:
 
 In the `$PROJECT_ROOT/evaluation/` directory there is a bash script named `config.sh`. This script contains all the configuration parameters (like BERT model selection) for a fully automated execution of the python script pipeline. Each configuration parameter is briefly explained in the comments contained in the configuration script.
 <br />
+<br />
 Also, in each python script there is a detailed comment above main() function which explains a few more configuration options.
 
 ## Execution
