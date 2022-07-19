@@ -1,7 +1,7 @@
 # Question Answering Evaluation
 
 ## Overview
-The main purpose of this project is to be able to **automatically evaluate Question Answering capabilities of a (multilingual) QnA approach, which uses Machine Translation and BERT**. Currently, question answering in Greek is supported, but the same approach can be utilized for any language. Detailed information about the introduced QnA approach and the comparative evaluation can be found in the respective paper, found **here**.
+The main purpose of this project is to be able to **automatically evaluate Question Answering capabilities of a (multilingual) QnA approach, which uses Machine Translation and BERT**. Currently, question answering in Greek is supported, but the same approach can be utilized for any language. Detailed information about the introduced QnA approach and the comparative evaluation can be found in the respective paper.
 
 The evaluation is comprised of 4 steps that form a pipeline:
 1. **Question answering** using the proposed approach (Machine Translation and BERT). 
